@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zrn-Note</title><meta name="description"><meta name="author" content="Zrn Ye"><meta name="copyright" content="Zrn Ye"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://zrn-coding.github.io/page/3/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Zrn-Note"><meta property="og:url" content="https://zrn-coding.github.io/page/3/"><meta property="og:site_name" content="Zrn-Note"><meta property="og:description"><meta property="og:image" content="https://zrn-coding.github.io/img/avatar.jpg"><meta property="article:published_time" content="2020-08-23T07:23:00.439Z"><meta property="article:modified_time" content="2020-08-23T07:23:00.439Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"鍵將本頁加入書籤"},"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-08-23 15:23:00'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.1.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">29</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">標籤</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 超重要連結</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-life.github.io"><i class="fa-fw fa fa-home"></i><span> 我的生活</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-code.github.io"><i class="fa-fw fa fa-code"></i><span> 我的程式碼</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa-fa-lists"></i><span> 清單</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 時間軸</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-book"></i><span> 學習歷程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/presentation/"><i class="fa-fw fa fa-laptop"></i><span> 簡報</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="full_page" id="page-header" style="background-image: url(/img/index.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Zrn-Note</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 超重要連結</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-life.github.io"><i class="fa-fw fa fa-home"></i><span> 我的生活</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-code.github.io"><i class="fa-fw fa fa-code"></i><span> 我的程式碼</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa-fa-lists"></i><span> 清單</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 時間軸</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-book"></i><span> 學習歷程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/presentation/"><i class="fa-fw fa fa-laptop"></i><span> 簡報</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Zrn-Note</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/23/AI-6/" title="CNN辨識物體">     <img class="post_bg" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CNN辨識物體"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/23/AI-6/" title="CNN辨識物體">CNN辨識物體</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-04-23T05:29:23.000Z" title="發表於 2020-04-23 13:29:23">2020-04-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/">淺談與實作</a></span></div><div class="content">資料預處理匯入所需的模組1234from keras.datasets import cifar10from keras.utils import np_utilsimport numpy as npnp.random.seed(10)
+讀取cifar10資料1(x_train,y_train), (x_test,y_test) = cifar10.load_data()
+將feature標準化image的數字標準化，可以提高後續訓練模型的準確率，並更快速收斂。
+12x_train_normalize = x_train.astype(&#x27;float32&#x27;) / 255x_test_normalize = x_test.astype(&#x27;float32&#x27;) / 255
+label以One-hot encoding轉換使用np_utils.to_categorical，將訓練資料與測試資料進行轉換。
+12y_trainOneHot = np_utils.to_categorical(y_train)y_testOneHot = np_utils.to_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/16/AI-5/" title="CNN手寫辨識">     <img class="post_bg" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CNN手寫辨識"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/16/AI-5/" title="CNN手寫辨識">CNN手寫辨識</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-04-16T05:29:14.000Z" title="發表於 2020-04-16 13:29:14">2020-04-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/">淺談與實作</a></span></div><div class="content">卷積神經網路簡介卷積神經網路介紹卷積運算使用單一filter weight卷積運算產生影像Max-Pool 運算說明使用Max-Pool 將手寫數字影像轉換使用Max-Pool進行縮減取樣，執行手寫數字辨識轉換，將16個28 × 28影像縮小為16個14 × 14的影像。影像數不會受到改變。縮小的好處有: 
+
+減少需處理的資料點: 減少後續運算所需的時間
+讓影像位置差異變小: 例如手寫數字5，位置可能不同，但位置的不同可能會影響辨識，因此減少影像大小，位置差異也會減少
+參數的數量和計算量下降: 在意一定程度上可以控制Overfitting問題
+
+資料預處理匯入所需的模組1234from keras.datasets import mnistfrom keras.utils import np_utilsimport numpy as npnp.random.seed(10)
+讀取mnist資料1(x_train,y_train), (x_test,y_test) = mnist.load_data()
+將feature用reshape轉換將原本28×28的2為數字影像，以reshape ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/09/AI-4/" title="Keras MLP辨識手寫數字">     <img class="post_bg" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Keras MLP辨識手寫數字"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/09/AI-4/" title="Keras MLP辨識手寫數字">Keras MLP辨識手寫數字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-04-09T05:27:08.000Z" title="發表於 2020-04-09 13:27:08">2020-04-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/">淺談與實作</a></span></div><div class="content">流程
+          graph LR;
+    1.資料預處理-->2.建立模型-->3.訓練模型-->4.評估模型準確率-->5.進行預測;
+          
+
+資料預處理匯入所需的模組1234from keras.datasets import mnistfrom keras.utils import np_utilsimport numpy as npnp.random.seed(10)
+讀取mnist資料123from keras.datasets import mnist(x_train_image,y_train_label),\(x_test_image,y_test_label)  =  mnist.load_data()
+將feature用reshape轉換將原本28×28的2為數字影像，以reshape轉換為1維的向量，在使用astype轉換為float，共784個float。
+12x_train = x_train_image.reshape(60000, 784).astype(&#x27;float32&#x27;)x_test  = x_test_ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/24/AI-3/" title="Tensorflow與Keras介紹">     <img class="post_bg" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Tensorflow與Keras介紹"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/24/AI-3/" title="Tensorflow與Keras介紹">Tensorflow與Keras介紹</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-03-24T15:25:37.000Z" title="發表於 2020-03-24 23:25:37">2020-03-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/">淺談與實作</a></span></div><div class="content">Tensorflow架構圖
+處理器
+CPU: 每一台電腦一定有中央處理器(CPU)，可以執行TensorFlow
+GPU: 圖形處理器(顯卡)，GPU可以達到數千個小型且高效率的核心，可以發揮平行運算的強大功能
+TPU: TPU是 google 為人工智慧所研發的專屬晶片，比GPU有更佳的執行性能平台
+Windows: 個人電腦最常用的作業系統
+Linux: TensorFlow可以在各種版本的Linux系統上使用
+iOS: TensorFlow可以在iOS行動裝置或Mac OS上執行
+Android: 在Android上運行TensorFlow，讓深度學習進入行動端，Android裝置的執行效能也開始提升，更適合TensorFlow的運行
+Raspbarry Pi: 樹莓派可以開發物聯網或機器人，提供人工智慧的功能
+雲端執行: 可以透過雲端的大量的伺服器，加速學習模型的訓練Tensorflow Distributed Execution Engine在深度學習中，最花時間的是模型上的訓練，尤其是大資料的訓練，TensorFlow具備分散式運算能力，可同時在數百台的機器上執行訓練模型， ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/21/AI-2/" title="深度學習的原理">     <img class="post_bg" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深度學習的原理"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/21/AI-2/" title="深度學習的原理">深度學習的原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-03-21T08:04:31.000Z" title="發表於 2020-03-21 16:04:31">2020-03-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/">淺談與實作</a></span></div><div class="content">神經傳導原理數學公式模擬
+$y = activation function(x_1w_1+x_2w_2+…+x_m*w_m +b)$|               項目                  |                                                                            說明                                                                               ||:——————————-:    |:———————————————————————————————————————————————————:    ||              輸入X                  |                                                              X模擬輸入神經元，接收外部的資料                                                ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/20/STL/" title="STL">     <img class="post_bg" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STL"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/20/STL/" title="STL">STL</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-03-20T03:18:34.000Z" title="發表於 2020-03-20 11:18:34">2020-03-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/C/%E7%AD%86%E8%A8%98/">筆記</a></span></div><div class="content">常用容器 containerVector簡單的講就是動態的陣列，大小可以是0到無限大
+
+標頭檔：&lt;vector&gt;
+v[i]：v 的第 i 項
+v.size()：回傳 v 目前的長度
+v.push_back(T a)：在 v 的結尾加一個 a
+v.pop_back()：刪除 v 的最末項，若 v 為空，會發生無法預期的結果
+v.empty()：回傳一個 bool，表示 v 是否為空的
+v.clear()：清空 v，但原本的空間不會被釋放掉。範例1123456789101112131415#include&lt;iostream&gt;#include&lt;vector&gt;using namespace std;vector &lt;int&gt; v;int main()&#123;    v.push_back(10);  //[10]    v.push_back(20);  //[10 , 20]    v.push_back(30);  //[10 , 20 , 30]    int length = v.size();    for(int i = 0; i  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/18/AI-1/" title="人工智慧、機器學習以及深度學習!!?">     <img class="post_bg" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人工智慧、機器學習以及深度學習!!?"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/18/AI-1/" title="人工智慧、機器學習以及深度學習!!?">人工智慧、機器學習以及深度學習!!?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-03-18T15:11:06.000Z" title="發表於 2020-03-18 23:11:06">2020-03-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/AI/">AI</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/">淺談與實作</a></span></div><div class="content">人工智慧AI的起源??AI 這個詞彙首次出現是在1950 年，目標能讓電腦像人一樣思考與學習，那時離現代電腦的發明也不過幾年的時間，當時的人工智慧做的不過是跑一些寫好的邏輯程式、處理數學定理證明，應用其實並不廣；此外，由於當時電腦體積龐大、性能又有諸多限制，人工智慧發展很快就面臨到瓶頸了。
+AI的發展及突破沉寂一陣子後，在約二、三十年前，因為電腦儲存空間、運算性能的突破，AI 重新回歸主流技術發展重點，開始出現 「機器學習」 這塊領域，並得到了很好的成果，如發展出「支持向量機（SVM）」模型，能有效分類處理各種數據；到了最近幾年，又因為技術與演算法的進步，再度發展出深度學習這個領域，AI 的成長儼然已成為不可忽視的巨獸！ 
+1980年代翰瑟爾，提出對人工智慧的分類方式 :
+
+Strong AI : 機器能具有與人類完全相同完整的認知能力
+Weak AI : 機器不需要具備完整的認知能力，只要設計得看起來有智慧即可
+
+機械學習 (Machine Learning)機械學習是什麼??機器學習是AI的分支，為了讓電腦透過自我學習的方式，去解析數據或做出問題判斷，不斷優化改進自身，而非單純寫好 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/16/basic/" title="C++基礎">     <img class="post_bg" data-lazy-src="https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++基礎"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/16/basic/" title="C++基礎">C++基礎</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-03-16T13:43:24.000Z" title="發表於 2020-03-16 21:43:24">2020-03-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/C/">C++</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/C/%E7%AD%86%E8%A8%98/">筆記</a></span></div><div class="content">C++的基本知識必須注意的事
+英文或阿拉伯數字需使用半形的字，不要使用全形。
+
+英文字有大小寫的差別，輸入時務必小心。例如: main 被打成Main或MAIN編譯時都會發生錯誤。
+
+程式中有空白的地方，需用鍵盤上的空白鍵隔開。 
+
+在一行或一組程式的結束後面切記加上 「;」，代表該行程式執行結束。
+
+{ } 、[ ] 、 ( ) 和 “ “、’ ‘ 的使用時機互不相同。
+
+善用 */ /**、/ */註解功能幫助自己查核時，減少大量時間和心力的消耗。
+
+需善用 Tab鍵 縮排 Enter鍵 換行，可使程式更簡單、易讀，這是撰寫程式需養成的習慣。 
+
+如果括號內的程式只有一行，則括號可以省略。
+
+若寫得程式很長可 分段做debug 動作，一步一步做出修正，避免最後整個錯亂掉。
+
+
+程式碼的內容123456789#include &lt;iostream&gt;              //為了要使用 cout 而引入的標頭檔using namespace std;             //為了更方便使用 cout 的註明int main()                     ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/14/hello/" title="第一篇開始">     <img class="post_bg" data-lazy-src="https://elearningbrothers.com/wp-content/uploads/2014/10/4757560171-575x364.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="第一篇開始"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/14/hello/" title="第一篇開始">第一篇開始</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2020-03-14T01:42:25.000Z" title="發表於 2020-03-14 09:42:25">2020-03-14</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%97%A5%E8%A8%98/">日記</a></span></div><div class="content">我來了開始最近，周遭的人越來越多該使架設起自己的Blog，就連自己的電腦社都要有自己的社網了，所以就開始了我連夜的瘋狂製作。
+嘗試一開始，想說要有自己的風格，就堅持從頭就只能用自己的努力，HTML、CSS以及javascript都由自己來寫，連續努力了整整二個禮拜的午夜，果然還是比不上網路現有的模板來的方便以及好看，最終我選擇放棄了，那份嘗試我看以後，有時間了再試試看吧。 （我絕不會放棄的
+目標
+用這份筆記
+把所寫好的程式碼貼到這裡分享
+把所學會的演算法和心得
+製作完一份高中三年的學習歷程
+
+
+自己的目標
+把課業搞得更好
+把社團弄得更豐富
+成功做出一份純本人手工的網頁
+生活過得更精彩
+
+
+
+心得及想法既然，現在的我穩定下自己的方向，就算是需要多次嘗試、努力甚至是犧牲，我也終究不後悔選擇了這條路，因為 我熱衷於此。
+我的座右銘:“The secret of success is constancy to purpose.”「成功的祕密是對目的堅貞不移。」– 班傑明‧迪斯雷利 (英國首相)
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Zrn Ye</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">29</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">標籤</div><div class="length_num">30</div></a></div><div class="card-info-data-item is-center"><a href="/categories"><div class="headline">分類</div><div class="length_num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">歡迎你的光臨</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/21/map2/" title="map的使用(新)"><img class="aside-post-bg" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="map的使用(新)"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/21/map2/" title="map的使用(新)">map的使用(新)</a><time class="aside-post_meta post-meta-date" datetime="2020-08-21T09:45:52.000Z" title="發表於 2020-08-21 17:45:52">2020-08-21</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/21/set/" title="set的使用(新)"><img class="aside-post-bg" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="set的使用(新)"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/21/set/" title="set的使用(新)">set的使用(新)</a><time class="aside-post_meta post-meta-date" datetime="2020-08-21T09:44:55.000Z" title="發表於 2020-08-21 17:44:55">2020-08-21</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/21/list/" title="list的使用"><img class="aside-post-bg" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="list的使用"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/21/list/" title="list的使用">list的使用</a><time class="aside-post_meta post-meta-date" datetime="2020-08-21T09:44:42.000Z" title="發表於 2020-08-21 17:44:42">2020-08-21</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/21/stack/" title="stack的使用(新)"><img class="aside-post-bg" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="stack的使用(新)"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/21/stack/" title="stack的使用(新)">stack的使用(新)</a><time class="aside-post_meta post-meta-date" datetime="2020-08-21T06:12:20.000Z" title="發表於 2020-08-21 14:12:20">2020-08-21</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/08/21/queue/" title="queue的使用(新)"><img class="aside-post-bg" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="queue的使用(新)"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/08/21/queue/" title="queue的使用(新)">queue的使用(新)</a><time class="aside-post_meta post-meta-date" datetime="2020-08-21T05:42:48.000Z" title="發表於 2020-08-21 13:42:48">2020-08-21</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分類</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">10</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/%E6%B7%BA%E8%AB%87%E8%88%87%E5%AF%A6%E4%BD%9C/"><span class="card-category-list-name">淺談與實作</span><span class="card-category-list-count">10</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">14</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/%E5%AD%B8%E7%BF%92%E5%9C%B0%E5%9C%96/"><span class="card-category-list-name">學習地圖</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/%E7%AD%86%E8%A8%98/"><span class="card-category-list-name">筆記</span><span class="card-category-list-count">13</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E8%A8%98/"><span class="card-category-list-name">日記</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%BC%94%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">演算法</span><span class="card-category-list-count">1</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>標籤</span></div><div class="card-tag-cloud"><a href="/tags/AI/" style="font-size: 20.29px; color: #99a4b4">AI</a> <a href="/tags/C/" style="font-size: 22px; color: #99a9bf">C++</a> <a href="/tags/CNN/" style="font-size: 16.86px; color: #999b9e">CNN</a> <a href="/tags/RNN/" style="font-size: 16px; color: #999">RNN</a> <a href="/tags/STL/" style="font-size: 19.43px; color: #99a2af">STL</a> <a href="/tags/keras/" style="font-size: 18.57px; color: #99a0a9">keras</a> <a href="/tags/python/" style="font-size: 19.43px; color: #99a2af">python</a> <a href="/tags/tensorflow/" style="font-size: 16.86px; color: #999b9e">tensorflow</a> <a href="/tags/%E5%87%BA%E9%A1%8C%E8%80%85/" style="font-size: 16px; color: #999">出題者</a> <a href="/tags/%E5%9F%BA%E7%A4%8E%E4%B9%8B%E8%B7%AF/" style="font-size: 21.14px; color: #99a7ba">基礎之路</a> <a href="/tags/%E5%9F%BA%E7%A4%8E%E5%9C%96%E8%AB%96/" style="font-size: 16px; color: #999">基礎圖論</a> <a href="/tags/%E5%AD%B8%E7%BF%92%E6%AD%B7%E7%A8%8B/" style="font-size: 16px; color: #999">學習歷程</a> <a href="/tags/%E5%AF%A6%E4%BD%9CAI/" style="font-size: 19.43px; color: #99a2af">實作AI</a> <a href="/tags/%E5%BF%83%E5%BE%97/" style="font-size: 16px; color: #999">心得</a> <a href="/tags/%E6%80%9D%E7%B6%AD%E9%A1%9E/" style="font-size: 16.86px; color: #999b9e">思維類</a> <a href="/tags/%E6%83%85%E7%B7%92%E5%88%86%E6%9E%90/" style="font-size: 16.86px; color: #999b9e">情緒分析</a> <a href="/tags/%E6%89%8B%E5%AF%AB%E8%BE%A8%E8%AD%98/" style="font-size: 16.86px; color: #999b9e">手寫辨識</a> <a href="/tags/%E6%97%A5%E8%A8%98/" style="font-size: 16.86px; color: #999b9e">日記</a> <a href="/tags/%E6%A9%9F%E6%A2%B0%E5%AD%B8%E7%BF%92/" style="font-size: 16px; color: #999">機械學習</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/" style="font-size: 20.29px; color: #99a4b4">深度學習</a> <a href="/tags/%E6%B7%BA%E8%AB%87AI/" style="font-size: 17.71px; color: #999ea4">淺談AI</a> <a href="/tags/%E6%BC%94%E7%AE%97%E6%B3%95/" style="font-size: 16.86px; color: #999b9e">演算法</a> <a href="/tags/%E7%89%A9%E9%AB%94%E8%BE%A8%E8%AD%98/" style="font-size: 16px; color: #999">物體辨識</a> <a href="/tags/%E7%AD%86%E8%A8%98/" style="font-size: 22px; color: #99a9bf">筆記</a> <a href="/tags/%E8%80%83%E8%A9%A6/" style="font-size: 16px; color: #999">考試</a> <a href="/tags/%E8%AA%9E%E6%B3%95/" style="font-size: 16.86px; color: #999b9e">語法</a> <a href="/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/" style="font-size: 19.43px; color: #99a2af">資料結構</a> <a href="/tags/%E8%B6%85%E5%9F%BA%E7%A4%8E%E4%B9%8B%E9%81%93/" style="font-size: 16.86px; color: #999b9e">超基礎之道</a> <a href="/tags/%E9%80%B2%E5%8C%96%E4%B9%8B%E8%B7%AF/" style="font-size: 16px; color: #999">進化之路</a> <a href="/tags/%E9%9B%BB%E8%85%A6%E7%A4%BE/" style="font-size: 16px; color: #999">電腦社</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>歸檔</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">6</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>網站資訊</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章數目 :</div><div class="webinfo-article-count">29</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已執行時間 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="3/13/2020 21:30:00">     </div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站訪客數 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站總訪問量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/index.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Zrn Ye</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "成功的祕密是對目的堅貞不移,The secret to success is to purpose constantly.".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '成功的祕密是對目的堅貞不移'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><link rel="stylesheet" href="/css/csstest.css"><script data-pjax src="/js/jstest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

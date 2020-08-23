@@ -1,0 +1,670 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++基礎 | Zrn-Note</title><meta name="description" content="C++的基本知識必須注意的事 英文或阿拉伯數字需使用半形的字，不要使用全形。  英文字有大小寫的差別，輸入時務必小心。例如: main 被打成Main或MAIN編譯時都會發生錯誤。  程式中有空白的地方，需用鍵盤上的空白鍵隔開。   在一行或一組程式的結束後面切記加上 「;」，代表該行程式執行結束。  { } 、[ ] 、 ( ) 和 “ “、’ ‘ 的使用時機互不相同。  善用 *&#x2F; &#x2F;**、&#x2F;"><meta name="keywords" content="C++,筆記,超基礎之道,語法"><meta name="author" content="Zrn Ye"><meta name="copyright" content="Zrn Ye"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://zrn-coding.github.io/2020/03/16/basic/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="C++基礎"><meta property="og:url" content="https://zrn-coding.github.io/2020/03/16/basic/"><meta property="og:site_name" content="Zrn-Note"><meta property="og:description" content="C++的基本知識必須注意的事 英文或阿拉伯數字需使用半形的字，不要使用全形。  英文字有大小寫的差別，輸入時務必小心。例如: main 被打成Main或MAIN編譯時都會發生錯誤。  程式中有空白的地方，需用鍵盤上的空白鍵隔開。   在一行或一組程式的結束後面切記加上 「;」，代表該行程式執行結束。  { } 、[ ] 、 ( ) 和 “ “、’ ‘ 的使用時機互不相同。  善用 *&#x2F; &#x2F;**、&#x2F;"><meta property="og:image" content="https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg"><meta property="article:published_time" content="2020-03-16T13:43:24.000Z"><meta property="article:modified_time" content="2020-08-19T11:42:28.446Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"鍵將本頁加入書籤"},"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-19 19:42:28'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.1.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">29</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">標籤</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 超重要連結</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-life.github.io"><i class="fa-fw fa fa-home"></i><span> 我的生活</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-code.github.io"><i class="fa-fw fa fa-code"></i><span> 我的程式碼</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa-fa-lists"></i><span> 清單</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 時間軸</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-book"></i><span> 學習歷程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/presentation/"><i class="fa-fw fa fa-laptop"></i><span> 簡報</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目錄</div><div class="sidebar-toc__progress"><span class="progress-notice">你已經讀了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AD%98"><span class="toc-number">1.</span> <span class="toc-text">C++的基本知識</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E9%A0%88%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B"><span class="toc-number">1.1.</span> <span class="toc-text">必須注意的事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%E7%9A%84%E5%85%A7%E5%AE%B9"><span class="toc-number">1.2.</span> <span class="toc-text">程式碼的內容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E5%87%BA%E7%8F%BE%E7%9A%84%E7%B7%A8%E8%AD%AF%E5%95%8F%E9%A1%8C-CE"><span class="toc-number">1.3.</span> <span class="toc-text">常出現的編譯問題 (CE)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E6%95%B8%E3%80%81%E8%AE%8A%E6%95%B8%E8%88%87%E8%B3%87%E6%96%99"><span class="toc-number">2.</span> <span class="toc-text">常數、變數與資料</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B-data-type"><span class="toc-number">2.1.</span> <span class="toc-text">資料型態 (data type)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%8A%E6%95%B8%E5%90%8D%E7%A8%B1-variable"><span class="toc-number">2.2.</span> <span class="toc-text">變數名稱(variable)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%8A%E6%95%B8%E5%AE%A3%E5%91%8A-declaration"><span class="toc-number">2.3.</span> <span class="toc-text">變數宣告(declaration)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A3%E5%91%8A%E5%B8%B8%E6%95%B8-const"><span class="toc-number">2.3.1.</span> <span class="toc-text">宣告常數(const)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%8B%E7%AE%97%E5%AD%90%E8%88%87%E5%9F%BA%E6%9C%AC%E7%B5%90%E6%A7%8B"><span class="toc-number">3.</span> <span class="toc-text">運算子與基本結構</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.1.</span> <span class="toc-text">算術運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%9C%E4%BF%82%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.2.</span> <span class="toc-text">關係與邏輯運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A4%87%E5%90%88%E6%8C%87%E5%AE%9A%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">3.3.</span> <span class="toc-text">複合指定運算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bouns-01"><span class="toc-number">3.4.</span> <span class="toc-text">Bouns 01</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8B%E7%AE%97%E7%AC%A6%E8%99%9F%E7%9A%84%E5%84%AA%E5%85%88%E9%A0%86%E5%BA%8F"><span class="toc-number">3.5.</span> <span class="toc-text">運算符號的優先順序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-01-%E9%9D%A2%E7%A9%8D01"><span class="toc-number">3.6.</span> <span class="toc-text">Ex.01 面積01:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-02-%E8%B7%9D%E9%9B%A2"><span class="toc-number">3.7.</span> <span class="toc-text">Ex.02 距離:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E5%BA%8F%E5%BC%8F%E7%B5%90%E6%A7%8B-sequence-structure"><span class="toc-number">3.8.</span> <span class="toc-text">循序式結構 (sequence structure)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%B8%E6%93%87%E5%BC%8F%E7%B5%90%E6%A7%8B-selection-structure"><span class="toc-number">3.9.</span> <span class="toc-text">選擇式結構(selection structure)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A4%87%E5%BC%8F%E7%B5%90%E6%A7%8B-repetition-structure"><span class="toc-number">3.10.</span> <span class="toc-text">重複式結構(repetition structure)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A2%9D%E4%BB%B6%E9%81%B8%E6%93%87"><span class="toc-number">4.</span> <span class="toc-text">條件選擇</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97"><span class="toc-number">4.1.</span> <span class="toc-text">邏輯運算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="toc-number">4.1.1.</span> <span class="toc-text">邏輯運算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%8F%E8%BC%AFAND%E8%88%87OR%E9%81%8B%E7%AE%97%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">4.1.2.</span> <span class="toc-text">邏輯AND與OR運算真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%8F%E8%BC%AFNOT%E9%81%8B%E7%AE%97%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">4.1.3.</span> <span class="toc-text">邏輯NOT運算真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%BC%8F%E5%80%BC"><span class="toc-number">4.1.4.</span> <span class="toc-text">邏輯運算式值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bouns-02-%E6%8E%A8%E7%AE%97%E4%B8%8B%E5%88%97%E6%B7%B7%E5%90%88%E9%81%8B%E7%AE%97%E5%BC%8F%E7%9A%84%E5%80%BC-true-false"><span class="toc-number">4.2.</span> <span class="toc-text">Bouns 02 推算下列混合運算式的值(true || false)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%9D%E4%BB%B6%E9%81%B8%E6%93%87-1"><span class="toc-number">4.3.</span> <span class="toc-text">條件選擇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if%E6%95%98%E8%BF%B0"><span class="toc-number">4.4.</span> <span class="toc-text">if敘述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B1-%E5%88%A4%E6%96%B7%E6%AD%A3%E6%95%B8"><span class="toc-number">4.5.</span> <span class="toc-text">例1: 判斷正數</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else%E6%95%98%E8%BF%B0"><span class="toc-number">4.6.</span> <span class="toc-text">if-else敘述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-03-%E9%9D%A2%E7%A9%8D02"><span class="toc-number">4.7.</span> <span class="toc-text">Ex.03 :面積02</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else-if%E6%95%98%E8%BF%B0"><span class="toc-number">4.8.</span> <span class="toc-text">if-else if敘述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B2-%E5%8D%80%E5%88%86%E5%88%86%E6%95%B8%E7%AD%89%E7%B4%9A"><span class="toc-number">4.9.</span> <span class="toc-text">例2:區分分數等級</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-04-%E5%88%A4%E6%96%B7%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F%E7%9A%84%E6%A0%B9"><span class="toc-number">4.10.</span> <span class="toc-text">Ex.04 判斷一元二次方程式的根</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-05-%E8%A8%88%E7%AE%97%E6%8A%98%E6%89%A3%E5%83%B9"><span class="toc-number">4.11.</span> <span class="toc-text">Ex.05 計算折扣價</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A2%E7%8B%80if%E6%95%98%E8%BF%B0"><span class="toc-number">4.12.</span> <span class="toc-text">巢狀if敘述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B3-%E7%94%A8%E5%B7%A2%E7%8B%80if%E5%88%A4%E6%96%B7%E9%96%8F%E5%B9%B4%E5%B9%B4%E5%88%86"><span class="toc-number">4.13.</span> <span class="toc-text">例3:用巢狀if判斷閏年年分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch%E6%95%98%E8%BF%B0"><span class="toc-number">4.14.</span> <span class="toc-text">switch敘述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B4-%E6%8C%89-%E9%8D%B5%EF%BC%8C%E5%9F%B7%E8%A1%8C-%E9%81%8B%E7%AE%97"><span class="toc-number">4.15.</span> <span class="toc-text">例4:按+ - * &#x2F; 鍵，執行  + - * &#x2F;運算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%B4%E5%9C%88"><span class="toc-number">5.</span> <span class="toc-text">迴圈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#for%E8%BF%B4%E5%9C%88"><span class="toc-number">5.1.</span> <span class="toc-text">for迴圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B5-%E8%A8%88%E7%AE%97n-%E7%9A%84%E5%80%BC"><span class="toc-number">5.2.</span> <span class="toc-text">例5: 計算n!的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A2%E7%8B%80%E8%BF%B4%E5%9C%88"><span class="toc-number">5.3.</span> <span class="toc-text">巢狀迴圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B6-%E5%8D%B0%E5%87%BAn%E5%B1%A4%E9%87%91%E5%AD%97%E5%A1%94"><span class="toc-number">5.4.</span> <span class="toc-text">例6: 印出n層金字塔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-06-%E5%80%92%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">5.5.</span> <span class="toc-text">Ex.06: 倒三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while%E8%BF%B4%E5%9C%88"><span class="toc-number">5.6.</span> <span class="toc-text">while迴圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B7-%E6%8A%8A%E6%95%B8%E5%AD%97%E5%8F%8D%E8%BD%89"><span class="toc-number">5.7.</span> <span class="toc-text">例7: 把數字反轉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#do%E2%80%A6while%E8%BF%B4%E5%9C%88"><span class="toc-number">5.8.</span> <span class="toc-text">do…while迴圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B8-%E5%B0%8F%E7%AE%97%E7%9B%A4%E9%96%8B%E6%A0%B9%E8%99%9F-%E4%BB%A5%E7%89%9B%E9%A0%93%E6%B3%95%E5%AF%A6%E4%BD%9C"><span class="toc-number">5.9.</span> <span class="toc-text">例8: 小算盤開根號(以牛頓法實作)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%A3%E5%88%97%E3%80%81%E5%AD%97%E4%B8%B2"><span class="toc-number">6.</span> <span class="toc-text">陣列、字串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%A3%E5%88%97"><span class="toc-number">6.1.</span> <span class="toc-text">陣列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B9-%E5%88%A9%E7%94%A8%E6%B3%A1%E6%B2%AB%E6%8E%92%E5%BA%8F%E6%B3%95-bubble-sort"><span class="toc-number">6.2.</span> <span class="toc-text">例9:利用泡沫排序法(bubble sort)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-07-%E6%88%90%E7%B8%BE%E5%96%AE"><span class="toc-number">6.3.</span> <span class="toc-text">Ex.07 成績單:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%B8%B2"><span class="toc-number">6.4.</span> <span class="toc-text">字串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B10-%E5%88%A4%E5%88%A5%E4%B8%80%E5%80%8B%E6%95%B8%E5%AD%97N%E6%98%AF%E5%90%A6%E7%82%BA3%E7%9A%84%E5%80%8D%E6%95%B8-N-gt-1020"><span class="toc-number">6.5.</span> <span class="toc-text">例10:判別一個數字N是否為3的倍數(N&gt;1020)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-08-%E5%AD%97%E4%B8%B2%E6%87%89%E7%94%A8"><span class="toc-number">6.6.</span> <span class="toc-text">Ex.08 字串應用:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">函式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E8%A8%82%E5%87%BD%E5%BC%8F"><span class="toc-number">7.1.</span> <span class="toc-text">自訂函式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B11-%E5%AF%AB%E4%B8%80%E5%87%BD%E5%BC%8F%E5%8F%AF%E4%BB%A5%E8%A8%88%E7%AE%97n-%EF%BC%8C%E4%B8%A6%E4%BB%A5%E4%B9%8B%E6%B1%82-C-n-k-frac-n-n-k-%C3%97-k"><span class="toc-number">7.2.</span> <span class="toc-text">例11:寫一函式可以計算n!，並以之求 $C(n,k)&#x3D;\frac{n!}{(n-k)! × k!}$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-09-gcd-01"><span class="toc-number">7.3.</span> <span class="toc-text">Ex.09 gcd 01:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#void"><span class="toc-number">7.4.</span> <span class="toc-text">void</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%9E%E8%BF%B4"><span class="toc-number">7.5.</span> <span class="toc-text">遞迴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B12-%E5%88%A9%E7%94%A8%E9%81%9E%E8%BF%B4%E5%87%BD%E5%BC%8F%E8%B2%BB%E6%B0%8F%E6%95%B8%E5%88%97%E7%9A%84%E7%AC%ACn%E9%A0%85"><span class="toc-number">7.6.</span> <span class="toc-text">例12:利用遞迴函式費氏數列的第n項</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B13-%E5%88%A9%E7%94%A8%E9%81%9E%E8%BF%B4%E5%87%BD%E5%BC%8F%E6%B1%82ab%E7%9A%84%E5%80%BC"><span class="toc-number">7.7.</span> <span class="toc-text">例13:利用遞迴函式求ab的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ex-10-gcd-02"><span class="toc-number">7.8.</span> <span class="toc-text">Ex.10 gcd 02</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Zrn-Note</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 超重要連結</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-life.github.io"><i class="fa-fw fa fa-home"></i><span> 我的生活</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-code.github.io"><i class="fa-fw fa fa-code"></i><span> 我的程式碼</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa-fa-lists"></i><span> 清單</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 時間軸</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-book"></i><span> 學習歷程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/presentation/"><i class="fa-fw fa fa-laptop"></i><span> 簡報</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">C++基礎</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2020-03-16T13:43:24.000Z" title="發表於 2020-03-16 21:43:24">2020-03-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2020-08-19T11:42:28.446Z" title="更新於 2020-08-19 19:42:28">2020-08-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/%E7%AD%86%E8%A8%98/">筆記</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="C-的基本知識"><a href="#C-的基本知識" class="headerlink" title="C++的基本知識"></a>C++的基本知識</h1><h2 id="必須注意的事"><a href="#必須注意的事" class="headerlink" title="必須注意的事"></a>必須注意的事</h2><ul>
+<li><p>英文或阿拉伯數字需<strong>使用半形</strong>的字，<strong>不要使用全形</strong>。</p>
+</li>
+<li><p>英文字有<strong>大小寫</strong>的差別，輸入時務必小心。<br>例如: <strong>main</strong> 被打成<strong>Main</strong>或<strong>MAIN</strong>編譯時都會發生錯誤。</p>
+</li>
+<li><p>程式中有空白的地方，需用鍵盤上的空白鍵隔開。 </p>
+</li>
+<li><p>在一行或一組程式的<strong>結束</strong>後面切記加上 <strong>「;」</strong>，代表該行程式執行結束。</p>
+</li>
+<li><p><strong>{ } 、[ ] 、 ( )</strong> 和 <strong>“ “、’ ‘</strong> 的使用時機互不相同。</p>
+</li>
+<li><p>善用 *<em>/ /**、/</em> */註解功能幫助自己查核時，減少大量時間和心力的消耗。</p>
+</li>
+<li><p>需善用 <strong>Tab鍵 縮排 Enter鍵 換行</strong>，可使程式更簡單、易讀，這是撰寫程式需養成的習慣。 </p>
+</li>
+<li><p>如果括號內的程式只有<strong>一行</strong>，則括號可以<strong>省略</strong>。</p>
+</li>
+<li><p>若寫得程式很長可 <strong>分段做debug</strong> 動作，一步一步做出修正，避免最後整個錯亂掉。</p>
+</li>
+</ul>
+<h2 id="程式碼的內容"><a href="#程式碼的內容" class="headerlink" title="程式碼的內容"></a>程式碼的內容</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;              //為了要使用 cout 而引入的標頭檔</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;             <span class="comment">//為了更方便使用 cout 的註明</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>                       <span class="comment">//main()函數的開始</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;初次嘗試C++\n&quot;</span>;      <span class="comment">//真正的程式從這樣一行開始</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;要好好加油喔！\n&quot;</span>;    <span class="comment">//接下來執行到這一行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;                    <span class="comment">//main()函數的結束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常出現的編譯問題-CE"><a href="#常出現的編譯問題-CE" class="headerlink" title="常出現的編譯問題 (CE)"></a>常出現的編譯問題 <strong>(CE)</strong></h2><ul>
+<li><p><strong>expected ‘ ; ’ before ‘ … ’ token</strong><br>解決方案：在錯誤出現處的行<strong>末尾</strong>加上 <strong>;</strong></p>
+</li>
+<li><p><strong>expected ‘ } ’ before ‘ … ’ token</strong><br>解決方案：檢查自己<strong>縮排</strong>的狀況，並找出遺漏的 }並補上</p>
+</li>
+<li><p><strong>“ 變數/常量/函式 ” was not declared in this scope</strong><br>解決方案：<br> 1.檢查<strong>變數</strong>是否在使用前被<strong>宣告</strong>，若無則就宣告它 。<br> 2.確認使用的<strong>預設函式</strong>其<strong>標頭檔</strong>是否已被宣告，若無則宣告它。</p>
+</li>
+</ul>
+<h1 id="常數、變數與資料"><a href="#常數、變數與資料" class="headerlink" title="常數、變數與資料"></a>常數、變數與資料</h1><h2 id="資料型態-data-type"><a href="#資料型態-data-type" class="headerlink" title="資料型態 (data type)"></a>資料型態 <strong>(data type)</strong></h2><table>
+<thead>
+<tr>
+<th align="center">常用型態</th>
+<th align="center">意義</th>
+<th align="center">資料範圍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int</td>
+<td align="center">整數</td>
+<td align="center">-2147483648~2147483647</td>
+</tr>
+<tr>
+<td align="center">long long int</td>
+<td align="center">長整數</td>
+<td align="center">-2<sup>63</sup>~2<sup>63</sup>-1</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">單經度浮點數</td>
+<td align="center">±3.4x 10^−38^ ~ ±3.4x10<sup>38</sup></td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">雙經度浮點數</td>
+<td align="center">±1.7×10^−308^~ ±1.7×10<sup>308</sup></td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">字串</td>
+<td align="center">“World”</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">字元</td>
+<td align="center">‘A’</td>
+</tr>
+<tr>
+<td align="center">bool</td>
+<td align="center">布林</td>
+<td align="center">true(1)或false(0)</td>
+</tr>
+</tbody></table>
+<h2 id="變數名稱-variable"><a href="#變數名稱-variable" class="headerlink" title="變數名稱(variable)"></a>變數名稱(variable)</h2><ul>
+<li>用來做為<strong>變數的名稱</strong>，需注意的事，如下：<ul>
+<li>使用英文字母、阿拉伯數字、底線連接（_）等，不能使用特殊的符號，例如: sum-1</li>
+<li>已保留的<strong>關鍵字</strong>（keyword)不可為變數名稱。例如: return、break…</li>
+<li>不能用<strong>阿拉伯數字作為開頭</strong>。例如: 12a、555…</li>
+<li>英文字母的大小寫有區別。</li>
+</ul>
+</li>
+</ul>
+<h2 id="變數宣告-declaration"><a href="#變數宣告-declaration" class="headerlink" title="變數宣告(declaration)"></a>變數宣告(declaration)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int num;                   &#x2F;&#x2F; 資料型態 變數名稱;</span><br><span class="line">char a &#x3D; &#39;A&#39;;              &#x2F;&#x2F; 資料型態 變數名稱 &#x3D; 初值;</span><br><span class="line">int sum, ave, rank, ...;   &#x2F;&#x2F; 資料型態 變數名稱1, 變數名稱2, 變數名稱3,...;</span><br></pre></td></tr></table></figure>
+<h3 id="宣告常數-const"><a href="#宣告常數-const" class="headerlink" title="宣告常數(const)"></a>宣告常數(const)</h3><p>利用常數給予一個定值可使數值被固定，如果後來再改變它，將發生錯誤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const double pi &#x3D; 3.141592;    &#x2F;&#x2F;const 資料型態 變數名稱 &#x3D; 特定資料 ;</span><br><span class="line">&#x2F;&#x2F;此後，pi值不會再被改變</span><br></pre></td></tr></table></figure>
+
+<h1 id="運算子與基本結構"><a href="#運算子與基本結構" class="headerlink" title="運算子與基本結構"></a>運算子與基本結構</h1><h2 id="算術運算子"><a href="#算術運算子" class="headerlink" title="算術運算子"></a>算術運算子</h2><table>
+<thead>
+<tr>
+<th align="center">符號</th>
+<th align="center">功能</th>
+<th align="center">範例</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加號</td>
+<td align="center">a = x + y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">減號</td>
+<td align="center">a = x - y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘號</td>
+<td align="center">a = x * y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">除號</td>
+<td align="center">a = x / y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取餘數</td>
+<td align="center">a = x % y</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">++x</td>
+<td align="center">運算前增量</td>
+<td align="center">a = ++x + y</td>
+<td align="center">x=x+1, a=x+y</td>
+</tr>
+<tr>
+<td align="center">x++</td>
+<td align="center">運算後增量</td>
+<td align="center">a = x++ + y</td>
+<td align="center">a=x+y,  x=x+1</td>
+</tr>
+<tr>
+<td align="center">–x</td>
+<td align="center">運算前減量</td>
+<td align="center">a = –x + y</td>
+<td align="center">x=x-1, a=x+y</td>
+</tr>
+<tr>
+<td align="center">x–</td>
+<td align="center">運算後減量</td>
+<td align="center">a = x– + y</td>
+<td align="center">a=x+y, x=x-1</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td align="center">負號</td>
+<td align="center">a = -x</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">+x</td>
+<td align="center">正號</td>
+<td align="center">a = +x</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<div class="note info">
+            <p><strong>整數</strong>除<strong>整數</strong>，結果為<strong>整數</strong>。 <strong>浮點數</strong>除<strong>浮點數</strong>，結果為<strong>浮點數</strong><br>例: 8 / 5 = <strong>1</strong> || 8.0 / 5.0 = <strong>1.6</strong></p>
+          </div>
+
+<h2 id="關係與邏輯運算子"><a href="#關係與邏輯運算子" class="headerlink" title="關係與邏輯運算子"></a>關係與邏輯運算子</h2><table>
+<thead>
+<tr>
+<th align="center">符號</th>
+<th align="center">功能</th>
+<th align="center">範例</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&gt;</td>
+<td align="center">大於</td>
+<td align="center">a&gt;b</td>
+<td align="center">若a&gt;b則結果為真</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">大於等於</td>
+<td align="center">a&gt;=b</td>
+<td align="center">若a≧b則結果為真</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小於</td>
+<td align="center">a&lt;b</td>
+<td align="center">若a＜b則結果為真</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">小於等於</td>
+<td align="center">a&lt;=b</td>
+<td align="center">若a≦b則結果為真</td>
+</tr>
+<tr>
+<td align="center">==</td>
+<td align="center">等於</td>
+<td align="center">a==b</td>
+<td align="center">若a=b則結果為真</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不等於</td>
+<td align="center">a!=b</td>
+<td align="center">若a≠b則結果為真</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="center">邏輯NOT</td>
+<td align="center">!(a==1)</td>
+<td align="center">若a≠1則結果為真</td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">邏輯AND</td>
+<td align="center">a&gt;2&amp;&amp;a&lt;9</td>
+<td align="center">若2&lt;a&lt;9則結果為真</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">邏輯OR</td>
+<td align="center">a&lt;2 || a&gt;9</td>
+<td align="center">若a&lt;2或a&gt;9則為真</td>
+</tr>
+</tbody></table>
+<h2 id="複合指定運算子"><a href="#複合指定運算子" class="headerlink" title="複合指定運算子"></a>複合指定運算子</h2><table>
+<thead>
+<tr>
+<th align="center">符號</th>
+<th align="center">功能</th>
+<th align="center">範例</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="center">簡單指定</td>
+<td align="center">x = y</td>
+<td align="center">令 x = y</td>
+</tr>
+<tr>
+<td align="center">+=</td>
+<td align="center">加法指定</td>
+<td align="center">x += y</td>
+<td align="center">令 x = x + y</td>
+</tr>
+<tr>
+<td align="center">-=</td>
+<td align="center">減法指定</td>
+<td align="center">x -= y</td>
+<td align="center">令 x = x - y</td>
+</tr>
+<tr>
+<td align="center">*=</td>
+<td align="center">乘法指定</td>
+<td align="center">x *= y</td>
+<td align="center">令 x = x * y</td>
+</tr>
+<tr>
+<td align="center">/=</td>
+<td align="center">除法指定</td>
+<td align="center">x /= y</td>
+<td align="center">令 x = x / y</td>
+</tr>
+<tr>
+<td align="center">%=</td>
+<td align="center">餘數指定</td>
+<td align="center">x %= y</td>
+<td align="center">令 x = x % y</td>
+</tr>
+</tbody></table>
+<div class="note warning">
+            <p>指定值x=y之後，<strong>變數x</strong>原來的值<strong>被覆蓋</strong>，而<strong>y值不變</strong><br><strong>善用</strong>可以使程式碼變得<strong>更精簡</strong>，不善使用則…會很困擾</p>
+          </div>
+
+<div class="note primary">
+            <h2 id="Bouns-01"><a href="#Bouns-01" class="headerlink" title="Bouns 01"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Bouns-01">Bouns 01</a></h2><p>在寫程式時，如果想要交換變數的話，不能直接寫x=y,y=x;（會出問題）那要如何完成呢?<br>那要如何在不宣告第三個變數的情況下進行交換呢?–&gt;多多去思考此問題</p>
+          </div>
+
+<h2 id="運算符號的優先順序"><a href="#運算符號的優先順序" class="headerlink" title="運算符號的優先順序"></a>運算符號的優先順序</h2><table>
+<thead>
+<tr>
+<th align="center">運算符號</th>
+<th align="center">優先順序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">( )</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">* , / , %</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">+ , -</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">==, &lt;, &gt;, &lt;=, &gt;=, !=</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<div class="note warning">
+            <p>若優先順序並列，則程式會<strong>由左至右</strong>依序執行<br>記得<strong>先加減後乘除</strong>的觀念，善用<strong>括號</strong><br>記得<strong>乘號</strong>在語言的世界裡，<strong>不能省略</strong></p>
+          </div>
+
+<div class="note primary">
+            <h2 id="Ex-01-面積01"><a href="#Ex-01-面積01" class="headerlink" title="Ex.01 面積01:"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex01">Ex.01 面積01:</a></h2><p> 利用海龍公式計算三角形面積(不討論是否能夠成三角形)<br> $s=\frac{a+b+c}{2}$，$area=\sqrt{(s(s-a)(s-b)(s-c))}$</p>
+          </div>
+
+<div class="note primary">
+            <h2 id="Ex-02-距離"><a href="#Ex-02-距離" class="headerlink" title="Ex.02 距離:"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex02">Ex.02 距離:</a></h2><p> 輸入四個浮點數 $x1,y1,x2,y2$，計算坐標系上$(x1,y1)$到$(x2,y2)$的距離<br> 距離公式: $distance=\sqrt{((x1-x2)^2+(y1-y2)^2)}$</p>
+          </div>
+
+
+<h2 id="循序式結構-sequence-structure"><a href="#循序式結構-sequence-structure" class="headerlink" title="循序式結構 (sequence structure)"></a>循序式結構 (sequence structure)</h2><p>程式依序從第一個敘述執行至最後一個敘述</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//循序式結構</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> name;                          <span class="comment">//第1步</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;name;                            <span class="comment">//第2步</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;Hello, &quot;</span>&lt;&lt;name&lt;&lt;<span class="built_in">endl</span>;          <span class="comment">//第3步</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;                             <span class="comment">//第4步</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="選擇式結構-selection-structure"><a href="#選擇式結構-selection-structure" class="headerlink" title="選擇式結構(selection structure)"></a>選擇式結構(selection structure)</h2><p> 程式運行到條件敘述，當條件成立(運算式值為1)時，<strong>重複</strong>執行重複區的敘述。<br> 反之，當條件不成立時(運算式值為0)，則結束重複結構。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//選擇式結構</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;                              <span class="comment">//第1步</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;請輸入一個數字&quot;</span>;                 <span class="comment">//第2步</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;num;                             <span class="comment">//第3步</span></span><br><span class="line">    <span class="keyword">if</span>(num%<span class="number">2</span>==<span class="number">0</span>)&#123;                         <span class="comment">//第4步</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;你輸入的是偶數&quot;</span>;             <span class="comment">//if運算值為1時的第5步</span></span><br><span class="line">    &#125;                                     <span class="comment">//if運算值為0省略第5步</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;                             <span class="comment">//第6步</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="重複式結構-repetition-structure"><a href="#重複式結構-repetition-structure" class="headerlink" title="重複式結構(repetition structure)"></a>重複式結構(repetition structure)</h2><p>  程式運行到重複敘述，當條件成立(運算式值為1)時，<strong>重複</strong>執行重複區敘述。<br>反之，當條件不成立時(運算式值為0)，則結束重複結構。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num,sum=<span class="number">0</span>;                          <span class="comment">//第1步</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;num;                               <span class="comment">//第2步</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=num;i++)                 <span class="comment">//第3步判斷</span></span><br><span class="line">        sum+=i;                             <span class="comment">//第4步，若執行完i++後，仍小於num不斷重複</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;從1加到num的總和為:&quot;</span>&lt;&lt;sum;         <span class="comment">//第5步</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;                                <span class="comment">//第6步</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="條件選擇"><a href="#條件選擇" class="headerlink" title="條件選擇"></a>條件選擇</h1><h2 id="邏輯運算"><a href="#邏輯運算" class="headerlink" title="邏輯運算"></a>邏輯運算</h2><h3 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h3><table>
+<thead>
+<tr>
+<th align="center">符號</th>
+<th align="center">功能</th>
+<th align="center">範例</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">!</td>
+<td align="center">邏輯NOT</td>
+<td align="center">!(a==1)</td>
+<td align="center">若a≠1則結果為真</td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">邏輯AND</td>
+<td align="center">a&gt;2&amp;&amp;a&lt;9</td>
+<td align="center">若2&lt;a&lt;9則結果為真</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">邏輯OR</td>
+<td align="center">a&lt;2 || a&gt;9</td>
+<td align="center">若a&lt;2或a&gt;9則為真</td>
+</tr>
+</tbody></table>
+<h3 id="邏輯AND與OR運算真值表"><a href="#邏輯AND與OR運算真值表" class="headerlink" title="邏輯AND與OR運算真值表"></a>邏輯AND與OR運算真值表</h3><table>
+<thead>
+<tr>
+<th align="center">運算式A</th>
+<th align="center">運算式B</th>
+<th align="center">A &amp;&amp; B</th>
+<th align="center">A || B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">false</td>
+<td align="center">false</td>
+<td align="center">false</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">false</td>
+<td align="center">true</td>
+<td align="center">false</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">true</td>
+<td align="center">false</td>
+<td align="center">false</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">true</td>
+<td align="center">true</td>
+<td align="center">true</td>
+<td align="center">true</td>
+</tr>
+</tbody></table>
+<h3 id="邏輯NOT運算真值表"><a href="#邏輯NOT運算真值表" class="headerlink" title="邏輯NOT運算真值表"></a>邏輯NOT運算真值表</h3><table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">!A</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">true</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">false</td>
+<td align="center">true</td>
+</tr>
+</tbody></table>
+<h3 id="邏輯運算式值"><a href="#邏輯運算式值" class="headerlink" title="邏輯運算式值"></a>邏輯運算式值</h3><table>
+<thead>
+<tr>
+<th align="center">邏輯運算式</th>
+<th align="center">邏輯運算值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(4.3&gt;3.7) &amp;&amp; (7==4+3)</td>
+<td align="center">true(1)</td>
+</tr>
+<tr>
+<td align="center">(9/2==4.5) || (5&gt;3.2)</td>
+<td align="center">true(1)</td>
+</tr>
+<tr>
+<td align="center">!(1.5 * 5 &gt;= 2)</td>
+<td align="center">false(0)</td>
+</tr>
+</tbody></table>
+<div class="note primary">
+            <h2 id="Bouns-02-推算下列混合運算式的值-true-false"><a href="#Bouns-02-推算下列混合運算式的值-true-false" class="headerlink" title="Bouns 02 推算下列混合運算式的值(true || false)"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Bouns-02">Bouns 02 推算下列混合運算式的值(true || false)</a></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> !(<span class="number">4.3</span> &gt; <span class="number">3.7</span>) &amp;&amp; (<span class="number">7</span> == <span class="number">5</span> + <span class="number">2</span>) || (<span class="number">15</span> / <span class="number">3</span> &lt; <span class="number">5</span>)</span><br><span class="line"><span class="number">2.</span> (<span class="number">8.2</span> &lt; <span class="number">7.3</span> * <span class="number">2</span>) || !(<span class="number">1</span> + <span class="number">3</span> * <span class="number">2</span> &lt; <span class="number">5</span>)</span><br><span class="line"><span class="number">3.</span> (<span class="number">96</span> / <span class="number">4</span> + <span class="number">2</span> &gt; <span class="number">20</span>) &amp;&amp; !(<span class="number">6</span> - <span class="number">2</span> * <span class="number">9</span> &gt; <span class="number">72</span> / <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+          </div>
+
+<h2 id="條件選擇-1"><a href="#條件選擇-1" class="headerlink" title="條件選擇"></a>條件選擇</h2><h2 id="if敘述"><a href="#if敘述" class="headerlink" title="if敘述"></a><strong>if敘述</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(條件式)</span><br><span class="line">&#123;</span><br><span class="line">    條件「成立」時的敘述;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note warning">
+            <p><strong>if(條件式) 後面沒有；</strong></p>
+          </div>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://github.com/For-cpp/-/blob/master/if.png?raw=true" alt="made by 葉致宏"></p>
+<h2 id="例1-判斷正數"><a href="#例1-判斷正數" class="headerlink" title="例1: 判斷正數"></a>例1: 判斷正數</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;請輸入一個整數:&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">if</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="string">&quot;是正數&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="if-else敘述"><a href="#if-else敘述" class="headerlink" title="if-else敘述"></a><strong>if-else敘述</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(條件式)</span><br><span class="line">&#123;</span><br><span class="line">    條件「成立」時，敘述<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    條件「不成立」時，敘述<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="https://github.com/For-cpp/-/blob/master/if-else.png?raw=true" alt="made by 葉致宏"></p>
+<div class="note primary">
+            <h2 id="Ex-03-面積02"><a href="#Ex-03-面積02" class="headerlink" title="Ex.03 :面積02"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex03">Ex.03 :面積02</a></h2><p> 繼Ex.01 加上if先判斷是否能構成三角形</p>
+          </div>
+
+<h2 id="if-else-if敘述"><a href="#if-else-if敘述" class="headerlink" title="if-else if敘述"></a><strong>if-else if敘述</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(條件<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    條件<span class="number">1</span>「成立」時程式碼區塊;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(條件<span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    條件<span class="number">1</span>「不成立」，且條件<span class="number">2</span>「成立」時的程式碼;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(條件<span class="number">3</span>)</span><br><span class="line">&#123;</span><br><span class="line">    條件<span class="number">1</span>、<span class="number">2</span>「不成立」，且條件<span class="number">3</span>「成立」時的程式碼;</span><br><span class="line">&#125;</span><br><span class="line">....</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    上述條件都「不成立」時的程式碼;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="https://github.com/For-cpp/-/blob/master/else-if.png?raw=true" alt="image alt"></p>
+<h2 id="例2-區分分數等級"><a href="#例2-區分分數等級" class="headerlink" title="例2:區分分數等級"></a>例2:區分分數等級</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;請輸入成績 (0 - 100)：&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; number;	                <span class="comment">//輸入數值並存入number</span></span><br><span class="line">    <span class="keyword">if</span> (number &gt;= <span class="number">90</span>)	                <span class="comment">//若90&lt;=number，則</span></span><br><span class="line">    	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;成績甲等\n&quot;</span>;	        <span class="comment">//輸出甲等並結束 if</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (number &gt;= <span class="number">80</span>)  	        <span class="comment">//其餘若80&lt;=number，則</span></span><br><span class="line">    	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;成績乙等\n&quot;</span>; 	        <span class="comment">//輸出乙等並結束 if</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (number &gt;= <span class="number">70</span> ) 	        <span class="comment">//其餘若70&lt;=number，則</span></span><br><span class="line">    	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;成績丙等\n&quot;</span>;	        <span class="comment">//輸出丙等並結束 if</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (number &gt;= <span class="number">60</span> )            <span class="comment">//若60&lt;=number，則</span></span><br><span class="line">    	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;成績丁等\n&quot;</span>;           <span class="comment">//輸出丁等並結束 if</span></span><br><span class="line">    <span class="keyword">else</span>                               <span class="comment">//全部皆不成立，則</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;成績戊等\n&quot;</span>            <span class="comment">//輸出戊等並結束 if</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note primary">
+            <h2 id="Ex-04-判斷一元二次方程式的根"><a href="#Ex-04-判斷一元二次方程式的根" class="headerlink" title="Ex.04 判斷一元二次方程式的根"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex04">Ex.04 判斷一元二次方程式的根</a></h2><p> <strong>由鍵盤輸入方程式ax^2^+bx+c=0的a,b,c，判斷方程式根的狀態</strong></p><ul><li>若b^2^-4ac&gt;0，則表示方程式具有二個實根</li><li>若b^2^-4ac=0，則表示方程式具有一個實根</li><li>若b^2^-4ac&lt;0，則表示方程式具有二個虛根</li></ul>
+          </div>
+
+
+<div class="note primary">
+            <h2 id="Ex-05-計算折扣價"><a href="#Ex-05-計算折扣價" class="headerlink" title="Ex.05 計算折扣價"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex05">Ex.05 計算折扣價</a></h2><p> 假設一台電腦單價為$39,999元，由鍵盤輸入購買數量，計算並顯示總價<br> 其採購量與折扣對應表如下:</p><table><thead><tr><th align="center">數量</th><th align="center">10~19</th><th align="center">20~49</th><th align="center">50~99</th><th align="center">100以上</th></tr></thead><tbody><tr><td align="center"><strong>折扣</strong></td><td align="center">10%</td><td align="center">20%</td><td align="center">30%</td><td align="center">40%</td></tr></tbody></table>
+          </div>
+
+<h2 id="巢狀if敘述"><a href="#巢狀if敘述" class="headerlink" title="巢狀if敘述"></a><strong>巢狀if敘述</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(條件<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(條件<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        條件<span class="number">1</span>「成立」，且條件<span class="number">2</span>「成立」時的程式碼A</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        條件<span class="number">1</span>「成立」，且條件<span class="number">2</span>「不成立」時的程式碼B</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    條件<span class="number">1</span>「不成立」時程式碼C</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="https://github.com/For-cpp/-/blob/master/%E5%B7%A2%E7%8B%80if.png?raw=true" alt="image alt"></p>
+<h2 id="例3-用巢狀if判斷閏年年分"><a href="#例3-用巢狀if判斷閏年年分" class="headerlink" title="例3:用巢狀if判斷閏年年分"></a>例3:用巢狀if判斷閏年年分</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; year;</span><br><span class="line">    <span class="keyword">if</span>(year % <span class="number">4</span> !=<span class="number">0</span> )                    <span class="comment">//如果不是4的倍數</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; year &lt;&lt;<span class="string">&quot;不是閏年&quot;</span>;        <span class="comment">//則輸出不是閏年</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(year % <span class="number">100</span> ==<span class="number">0</span>)&#123;             <span class="comment">//其中如果是100的倍數</span></span><br><span class="line">        <span class="keyword">if</span>(year % <span class="number">400</span> ==<span class="number">0</span>)               <span class="comment">//如果又是400的倍數</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; year &lt;&lt;<span class="string">&quot;是閏年&quot;</span>;      <span class="comment">//則輸出是閏年</span></span><br><span class="line">        <span class="keyword">else</span>                             <span class="comment">//只是100的倍數</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; year &lt;&lt; <span class="string">&quot;不是閏年&quot;</span>;   <span class="comment">//則輸出不是閏年</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>                                 <span class="comment">//只能被4整除</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; year &lt;&lt; <span class="string">&quot;是閏年&quot;</span>;         <span class="comment">//則輸出是閏年</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="switch敘述"><a href="#switch敘述" class="headerlink" title="switch敘述"></a><strong>switch敘述</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (條件運算式)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 數值<span class="number">1</span>:</span><br><span class="line">        數值<span class="number">1</span>「成立」的敘述區<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">//中斷 switch</span></span><br><span class="line">    <span class="keyword">case</span> 數值<span class="number">2</span>:</span><br><span class="line">        數值<span class="number">2</span>「成立」的敘述區<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">//中斷 switch</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        以上條件皆「不成立」敘述區n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="https://github.com/For-cpp/-/blob/master/switch.png?raw=true" alt="image alt"></p>
+<h2 id="例4-按-鍵，執行-運算"><a href="#例4-按-鍵，執行-運算" class="headerlink" title="例4:按+ - * / 鍵，執行  + - * /運算"></a>例4:按+ - * / 鍵，執行  + - * /運算</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> letter;</span><br><span class="line">    <span class="keyword">int</span> num1 = <span class="number">90</span>, num2 = <span class="number">15</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;num1 = 90,num2 = 15\n&quot;</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;從鍵盤上輸入+, -, *, / :&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;letter;</span><br><span class="line">    <span class="keyword">switch</span> (letter)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;num1 + num2 =&quot;</span>&lt;&lt; num1 + num2 &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;num1 - num2 =&quot;</span>&lt;&lt; num1 - num2 &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;num1 * num2 =&quot;</span>&lt;&lt; num1 * num2 &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;num1 / num2 =&quot;</span>&lt;&lt; num1 / num2 &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="迴圈"><a href="#迴圈" class="headerlink" title="迴圈"></a>迴圈</h1><h2 id="for迴圈"><a href="#for迴圈" class="headerlink" title="for迴圈"></a>for迴圈</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(變數初值;條件判斷;改變量)</span><br><span class="line">&#123;</span><br><span class="line">    程式碼</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note info">
+            <p><strong>for(  )後面也沒有 ；</strong><br>for語句的三個部分都是可以省略的</p>
+          </div>
+
+<h2 id="例5-計算n-的值"><a href="#例5-計算n-的值" class="headerlink" title="例5: 計算n!的值"></a>例5: 計算n!的值</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,sum=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;請輸入n：&quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)   <span class="comment">// 讓 i 從 1~n</span></span><br><span class="line">        sum*=i;              <span class="comment">// 每次迴圈 sum=sum*i</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; sum;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="巢狀迴圈"><a href="#巢狀迴圈" class="headerlink" title="巢狀迴圈"></a>巢狀迴圈</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(變數<span class="number">1</span>初值;條件<span class="number">1</span>判斷;改變量)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(變數<span class="number">2</span>初值;條件<span class="number">2</span>判斷;改變量)</span><br><span class="line">    &#123;</span><br><span class="line">        程式碼</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例6-印出n層金字塔"><a href="#例6-印出n層金字塔" class="headerlink" title="例6: 印出n層金字塔"></a>例6: 印出n層金字塔</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n-i;j++)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">2</span>*i<span class="number">-1</span>;j++)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;*&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n-i;j++)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note primary">
+            <h2 id="Ex-06-倒三角形"><a href="#Ex-06-倒三角形" class="headerlink" title="Ex.06: 倒三角形"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex06">Ex.06: 倒三角形</a></h2><p> 印出一個高為10的顛倒金字塔<br><img src= "/img/loading.gif" data-lazy-src="https://i.imgur.com/2fKHDNH.jpg=1000x1000" alt="我只是個三角形"></p>
+          </div>
+
+<h2 id="while迴圈"><a href="#while迴圈" class="headerlink" title="while迴圈"></a>while迴圈</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(條件判斷)    <span class="comment">// 條件為「真」的時候繼續執行</span></span><br><span class="line">&#123;</span><br><span class="line">    程式碼</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例7-把數字反轉"><a href="#例7-把數字反轉" class="headerlink" title="例7: 把數字反轉"></a>例7: 把數字反轉</h2><p>(若數字為100，顛倒後的數表示為1，不是001)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n%<span class="number">10</span>==<span class="number">0</span> &amp;&amp; n&gt;<span class="number">0</span>)</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">while</span>(n%<span class="number">10</span>!=<span class="number">0</span>||n&gt;=<span class="number">10</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;n%<span class="number">10</span>;</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="do…while迴圈"><a href="#do…while迴圈" class="headerlink" title="do…while迴圈"></a>do…while迴圈</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    程式碼</span><br><span class="line">&#125;<span class="keyword">while</span>(條件判斷);  <span class="comment">// 條件為「真」的時候繼續執行</span></span><br></pre></td></tr></table></figure>
+<div class="note warning">
+            <p><strong>do…while</strong>與<strong>while</strong>的差別在於<strong>do…while至少會做一次</strong><br><strong>do…while後面要加分號</strong>，表示結束</p>
+          </div>
+
+<h2 id="例8-小算盤開根號-以牛頓法實作"><a href="#例8-小算盤開根號-以牛頓法實作" class="headerlink" title="例8: 小算盤開根號(以牛頓法實作)"></a>例8: 小算盤開根號(<a target="_blank" rel="noopener" href="http://mathcenter.ck.tp.edu.tw/Resources/Ctrl/ePaper/ePaperOpenFileX.ashx?autoKey=55">以牛頓法實作</a>)</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a, n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    a = n;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        a = (a*a+n)/(<span class="number">2</span>*a);    <span class="comment">//挑出的第1個近似值a之後，作一切線，切線和x軸的交點</span></span><br><span class="line">    &#125; <span class="keyword">while</span> ( a*a-n&gt;<span class="number">1e-13</span> );  <span class="comment">//當a*a和n的誤差&gt;1e-13時，繼續逼進</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="陣列、字串"><a href="#陣列、字串" class="headerlink" title="陣列、字串"></a>陣列、字串</h1><h2 id="陣列"><a href="#陣列" class="headerlink" title="陣列"></a>陣列</h2><p><strong>陣列</strong>（Array），是由相同類型的元素的集合所組成的資料結構，分配一塊<strong>連續</strong>的記憶體來儲存。利用元素的索引(index)可以計算出該元素對應的儲存位址。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>];                      <span class="comment">// 宣告一個大小為5的int陣列</span></span><br><span class="line">arr[<span class="number">0</span>]=<span class="number">80</span>;                       <span class="comment">// 陣列的索引值由0開始</span></span><br><span class="line">arr[<span class="number">5</span>]=<span class="number">90</span>;                       <span class="comment">// 索引值0~4</span></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] =  &#123; <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span> &#125;; <span class="comment">// 宣告陣列時設定初值</span></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] =  &#123; <span class="number">1</span> &#125;;             <span class="comment">// arr[0]初值1，其餘預設為0</span></span><br><span class="line"><span class="keyword">int</span> arr[] = &#123; <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span> &#125;;   <span class="comment">// 陣列大小依初值自動計算</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr2D[<span class="number">4</span>][<span class="number">2</span>];                 <span class="comment">// 宣告二維陣列(多維陣列)</span></span><br><span class="line"><span class="keyword">int</span> arr2D[<span class="number">4</span>][<span class="number">2</span>] = &#123; &#123; <span class="number">1</span>, <span class="number">2</span> &#125;, &#123; <span class="number">3</span>, <span class="number">4</span> &#125;, &#123; <span class="number">5</span>, <span class="number">6</span> &#125;, &#123; <span class="number">7</span>, <span class="number">8</span> &#125; &#125;;</span><br></pre></td></tr></table></figure>
+
+
+<div class="note info">
+            <p>如果陣列要用的<strong>比較大</strong>一些，它就要在<strong>全域宣告</strong>喔</p>
+          </div>
+
+<h2 id="例9-利用泡沫排序法-bubble-sort"><a href="#例9-利用泡沫排序法-bubble-sort" class="headerlink" title="例9:利用泡沫排序法(bubble sort)"></a>例9:利用泡沫排序法(<a target="_blank" rel="noopener" href="https://medium.com/@mingjunlu/understanding-bubble-sort-7aa4567986ae">bubble sort</a>)</h2><p>將{3,2,4,8,9,1,7}由小至大排列，並依序輸出</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">7</span>]=&#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">7</span>&#125;,t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">7</span>-i<span class="number">-1</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">                    t=a[j];</span><br><span class="line">                    a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">                    a[j+<span class="number">1</span>]=t;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note primary">
+            <h2 id="Ex-07-成績單"><a href="#Ex-07-成績單" class="headerlink" title="Ex.07 成績單:"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex07">Ex.07 成績單:</a></h2><p>3年21班前五號的學測成績如下:</p><table><thead><tr><th align="center">座號</th><th align="center">國文</th><th align="center">數學</th><th align="center">英文</th><th align="center">自然</th><th align="center">社會</th><th align="center">總分</th><th align="center">平均</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">10</td><td align="center">12</td><td align="center">9</td><td align="center">11</td><td align="center">7</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">2</td><td align="center">9</td><td align="center">10</td><td align="center">8</td><td align="center">9</td><td align="center">11</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">3</td><td align="center">13</td><td align="center">8</td><td align="center">11</td><td align="center">7</td><td align="center">14</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">4</td><td align="center">8</td><td align="center">14</td><td align="center">13</td><td align="center">14</td><td align="center">9</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">5</td><td align="center">12</td><td align="center">10</td><td align="center">9</td><td align="center">10</td><td align="center">9</td><td align="center"></td><td align="center"></td></tr></tbody></table><p> 請利用多維陣列完成表格並完整的印出表格</p>
+          </div>
+
+
+
+<h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><p><strong>字串</strong>實例可以使用 [] 指定索引來存取相對應位置的<strong>字元</strong>，就有如<strong>字元陣列</strong>的操作一般</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string str1;                 &#x2F;&#x2F; 內容為空字串</span><br><span class="line">string str2 &#x3D; &quot;sololearn&quot;;   &#x2F;&#x2F; 內容為指定的字串常量</span><br></pre></td></tr></table></figure>
+
+<p>可使用 <strong>str.length()</strong> 或 <strong>str.size()**得知</strong>字串大小**</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s=<span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s長度為&lt;&lt;s.size()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">輸出--&gt;s長度為<span class="number">11</span></span><br><span class="line">    --&gt;Hello World</span><br></pre></td></tr></table></figure>
+
+<div class="note warning">
+            <p>從字串上的<strong>數字</strong>，僅是<strong>字元</strong>。若直接進行運算，計算的依據將為<a href="%5Bhttps%5D(https://zh.wikipedia.org/wiki/ASCII)"><strong>ASCII碼</strong></a>，結果會錯誤<br>若需要進行運算，則必須<strong>先減去’0’才行</strong></p>
+          </div>
+
+
+<h2 id="例10-判別一個數字N是否為3的倍數-N-gt-1020"><a href="#例10-判別一個數字N是否為3的倍數-N-gt-1020" class="headerlink" title="例10:判別一個數字N是否為3的倍數(N&gt;1020)"></a>例10:判別一個數字N是否為3的倍數(N&gt;10<sup>20</sup>)</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">        sum+=s[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span>(sum%<span class="number">3</span>==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">&quot;是3的倍數&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="string">&quot;不是3的倍數&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note primary">
+            <h2 id="Ex-08-字串應用"><a href="#Ex-08-字串應用" class="headerlink" title="Ex.08 字串應用:"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex08">Ex.08 字串應用:</a></h2><p> 判別一個數字N是否為11的倍數(N&gt;10^20^)</p>
+          </div>
+
+
+<h1 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h1><h2 id="自訂函式"><a href="#自訂函式" class="headerlink" title="自訂函式"></a>自訂函式</h2><p>有某些程式碼會經常使用，對於程式中出現兩次以上被重覆使用的程式片段，可以將之定義為<strong>函式</strong>以便<strong>重覆呼叫</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">回傳值的型態 函式名稱(變數型態 參數<span class="number">1</span>，變數型態 參數<span class="number">2</span>，...)</span><br><span class="line">&#123;</span><br><span class="line">    程式碼</span><br><span class="line">    <span class="keyword">return</span> 回傳值或運算式;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例11-寫一函式可以計算n-，並以之求-C-n-k-frac-n-n-k-×-k"><a href="#例11-寫一函式可以計算n-，並以之求-C-n-k-frac-n-n-k-×-k" class="headerlink" title="例11:寫一函式可以計算n!，並以之求 $C(n,k)=\frac{n!}{(n-k)! × k!}$"></a>例11:寫一函式可以計算n!，並以之求 $C(n,k)=\frac{n!}{(n-k)! × k!}$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    sum=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        sum*=i;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f(n)/((f(n-k)*f(k))&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note primary">
+            <h2 id="Ex-09-gcd-01"><a href="#Ex-09-gcd-01" class="headerlink" title="Ex.09 gcd 01:"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex09">Ex.09 gcd 01:</a></h2><p> 寫一個函式計算兩數的最大公因數</p>
+          </div>
+
+
+<h2 id="void"><a href="#void" class="headerlink" title="void"></a>void</h2><p>如果呼叫函式<strong>不傳回</strong>任何值，則宣告為<strong>void</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> 函式名稱(變數型態 參數<span class="number">1</span>，變數型態 參數<span class="number">2</span>，...)</span><br><span class="line">&#123;</span><br><span class="line">    程式碼</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="遞迴"><a href="#遞迴" class="headerlink" title="遞迴"></a>遞迴</h2><p><strong>遞迴</strong>（Recursion），是指在函式中<strong>使用函式自身</strong>的方法。</p>
+<div class="note warning">
+            <p>遞迴函式必須有<strong>終止條件</strong>，才能被計算。</p>
+          </div>
+
+
+<h2 id="例12-利用遞迴函式費氏數列的第n項"><a href="#例12-利用遞迴函式費氏數列的第n項" class="headerlink" title="例12:利用遞迴函式費氏數列的第n項"></a>例12:利用遞迴函式<a target="_blank" rel="noopener" href="https://medium.com/appworks-school/%E5%88%9D%E5%AD%B8%E8%80%85%E5%AD%B8%E6%BC%94%E7%AE%97%E6%B3%95-%E5%BE%9E%E8%B2%BB%E6%B0%8F%E6%95%B8%E5%88%97%E8%AA%8D%E8%AD%98%E4%BD%95%E8%AC%82%E9%81%9E%E8%BF%B4-dea15d2808a3">費氏數列</a>的第n項</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)                 <span class="comment">// n==0時終止，回傳0。if後只有一行，可省略&#123;&#125;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">1</span>)            <span class="comment">// n==1時終止，回傳1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> f(n<span class="number">-1</span>)+f(n<span class="number">-2</span>)    <span class="comment">// 遞迴呼叫</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; fib(n);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="例13-利用遞迴函式求ab的值"><a href="#例13-利用遞迴函式求ab的值" class="headerlink" title="例13:利用遞迴函式求ab的值"></a>例13:利用遞迴函式求a<sup>b</sup>的值</h2><p><img src= "/img/loading.gif" data-lazy-src="https://www.csie.ntu.edu.tw/~b98902112/cpp_and_algo/cpp02/recursion_exponentiation_def.png" alt="made by 葉致宏"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>( b == <span class="number">0</span> )</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>( b &gt;= <span class="number">1</span> )</span><br><span class="line">        <span class="keyword">return</span> a * f(a,b<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b )</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; f(a,b) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note primary">
+            <h2 id="Ex-10-gcd-02"><a href="#Ex-10-gcd-02" class="headerlink" title="Ex.10 gcd 02"></a><a target="_blank" rel="noopener" href="https://hackmd.io/xn9xTEwoSmqHXX9O4uRAuQ?view#Ex10">Ex.10 gcd 02</a></h2><p> 繼Ex.09運用遞迴函式求兩數的最大公因數</p>
+          </div>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zrn Ye</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="https://zrn-coding.github.io/2020/03/16/basic/">https://zrn-coding.github.io/2020/03/16/basic/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="https://zrn-coding.github.io" target="_blank">Zrn-Note</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/%E7%AD%86%E8%A8%98/">筆記</a><a class="post-meta__tags" href="/tags/%E8%B6%85%E5%9F%BA%E7%A4%8E%E4%B9%8B%E9%81%93/">超基礎之道</a><a class="post-meta__tags" href="/tags/%E8%AA%9E%E6%B3%95/">語法</a></div><div class="post_share"><div class="social-share" data-image="https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg" data-sites="facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/03/18/AI-1/"><img class="prev-cover" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">人工智慧、機器學習以及深度學習!!?</div></div></a></div><div class="next-post pull-right"><a href="/2020/03/14/hello/"><img class="next-cover" data-lazy-src="https://elearningbrothers.com/wp-content/uploads/2014/10/4757560171-575x364.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第一篇開始</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相關推薦</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/07/12/string/" title="字串處理"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-12</div><div class="relatedPosts_title">字串處理</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/map2/" title="map的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">map的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/set/" title="set的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">set的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/list/" title="list的使用"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">list的使用</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/stack/" title="stack的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">stack的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/19/vector/" title="vector的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-19</div><div class="relatedPosts_title">vector的使用(新)</div></div></a></div></div></div></article></main><footer id="footer" style="background-image: url(https://engineering.fb.com/wp-content/uploads/2015/06/1522635669452_11.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Zrn Ye</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字型"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="縮小字型"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
+  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
+})</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><link rel="stylesheet" href="/css/csstest.css"><script data-pjax src="/js/jstest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

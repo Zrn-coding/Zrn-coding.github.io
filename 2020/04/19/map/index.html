@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++學習地圖 | Zrn-Note</title><meta name="description" content="基礎語法基礎輸入輸出   筆記 Code 運算子與基本結構   筆記 Code 條件選擇   筆記 Code 迴圈   筆記 Code 陣列   筆記 Code 函式   筆記 Code   我不常單獨用，（；´д｀）ゞ 比較進階的基礎字串、stringstream   筆記 Code STL舊版筆記 Code 重製版 vector 筆記 Code queue 筆記 Code stack 筆記 C"><meta name="keywords" content="C++,學習歷程,進化之路"><meta name="author" content="Zrn Ye"><meta name="copyright" content="Zrn Ye"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://zrn-coding.github.io/2020/04/19/map/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="C++學習地圖"><meta property="og:url" content="https://zrn-coding.github.io/2020/04/19/map/"><meta property="og:site_name" content="Zrn-Note"><meta property="og:description" content="基礎語法基礎輸入輸出   筆記 Code 運算子與基本結構   筆記 Code 條件選擇   筆記 Code 迴圈   筆記 Code 陣列   筆記 Code 函式   筆記 Code   我不常單獨用，（；´д｀）ゞ 比較進階的基礎字串、stringstream   筆記 Code STL舊版筆記 Code 重製版 vector 筆記 Code queue 筆記 Code stack 筆記 C"><meta property="og:image" content="https://insights.dice.com/wp-content/uploads/2019/07/shutterstock_739534918.jpg"><meta property="article:published_time" content="2020-04-19T08:45:50.000Z"><meta property="article:modified_time" content="2020-08-21T13:26:48.757Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查詢的內容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"鍵將本頁加入書籤"},"chs_to_cht":"你已切換為繁體","cht_to_chs":"你已切換為簡體","day_to_night":"你已切換為深色模式","night_to_day":"你已切換為淺色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-21 21:26:48'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.1.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">29</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">標籤</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 超重要連結</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-life.github.io"><i class="fa-fw fa fa-home"></i><span> 我的生活</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-code.github.io"><i class="fa-fw fa fa-code"></i><span> 我的程式碼</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa-fa-lists"></i><span> 清單</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 時間軸</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-book"></i><span> 學習歷程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/presentation/"><i class="fa-fw fa fa-laptop"></i><span> 簡報</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目錄</div><div class="sidebar-toc__progress"><span class="progress-notice">你已經讀了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">基礎語法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA"><span class="toc-number">1.1.</span> <span class="toc-text">基礎輸入輸出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8B%E7%AE%97%E5%AD%90%E8%88%87%E5%9F%BA%E6%9C%AC%E7%B5%90%E6%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">運算子與基本結構</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%9D%E4%BB%B6%E9%81%B8%E6%93%87"><span class="toc-number">1.3.</span> <span class="toc-text">條件選擇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%B4%E5%9C%88"><span class="toc-number">1.4.</span> <span class="toc-text">迴圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%A3%E5%88%97"><span class="toc-number">1.5.</span> <span class="toc-text">陣列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E5%BC%8F"><span class="toc-number">1.6.</span> <span class="toc-text">函式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E8%BC%83%E9%80%B2%E9%9A%8E%E7%9A%84%E5%9F%BA%E7%A4%8E"><span class="toc-number">2.</span> <span class="toc-text">比較進階的基礎</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%B8%B2%E3%80%81stringstream"><span class="toc-number">2.1.</span> <span class="toc-text">字串、stringstream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STL"><span class="toc-number">2.2.</span> <span class="toc-text">STL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A3%BD%E7%89%88"><span class="toc-number">2.2.1.</span> <span class="toc-text">重製版</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%AE%E8%88%89%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">窮舉法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-number">2.4.</span> <span class="toc-text">排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%93%AC"><span class="toc-number">2.5.</span> <span class="toc-text">模擬</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E8%80%8C%E6%B2%BB%E4%B9%8B"><span class="toc-number">2.6.</span> <span class="toc-text">分而治之</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A6%E6%9F%A5%E9%9B%86"><span class="toc-number">2.7.</span> <span class="toc-text">並查集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E5%9C%96%E8%AB%96"><span class="toc-number">2.8.</span> <span class="toc-text">基礎圖論</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DP"><span class="toc-number">2.9.</span> <span class="toc-text">DP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E6%95%B8%E8%AB%96"><span class="toc-number">2.10.</span> <span class="toc-text">基礎數論</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://insights.dice.com/wp-content/uploads/2019/07/shutterstock_739534918.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Zrn-Note</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-link"></i><span> 超重要連結</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-life.github.io"><i class="fa-fw fa fa-home"></i><span> 我的生活</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://zrn-code.github.io"><i class="fa-fw fa fa-code"></i><span> 我的程式碼</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa-fa-lists"></i><span> 清單</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 時間軸</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分類</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-address-book"></i><span> 學習歷程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/presentation/"><i class="fa-fw fa fa-laptop"></i><span> 簡報</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">C++學習地圖</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2020-04-19T08:45:50.000Z" title="發表於 2020-04-19 16:45:50">2020-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2020-08-21T13:26:48.757Z" title="更新於 2020-08-21 21:26:48">2020-08-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/%E5%AD%B8%E7%BF%92%E5%9C%B0%E5%9C%96/">學習地圖</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="基礎語法"><a href="#基礎語法" class="headerlink" title="基礎語法"></a>基礎語法</h1><h2 id="基礎輸入輸出"><a href="#基礎輸入輸出" class="headerlink" title="基礎輸入輸出"></a>基礎輸入輸出</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green right" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="運算子與基本結構"><a href="#運算子與基本結構" class="headerlink" title="運算子與基本結構"></a>運算子與基本結構</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="條件選擇"><a href="#條件選擇" class="headerlink" title="條件選擇"></a>條件選擇</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="迴圈"><a href="#迴圈" class="headerlink" title="迴圈"></a>迴圈</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="陣列"><a href="#陣列" class="headerlink" title="陣列"></a>陣列</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <span class="hide-inline"><button type="button" class="hide-button button--animated" style="background-color: #5cb85c;">Code
+  </button><span class="hide-content">我不常單獨用，（；´д｀）ゞ</span></span>
+<h1 id="比較進階的基礎"><a href="#比較進階的基礎" class="headerlink" title="比較進階的基礎"></a>比較進階的基礎</h1><h2 id="字串、stringstream"><a href="#字串、stringstream" class="headerlink" title="字串、stringstream"></a>字串、stringstream</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/07/12/string/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/%E5%AD%97%E4%B8%B2/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h2><a class="btn-beautify button--animated red" href="https://zrn-coding.github.io/2020/03/20/STL/" 
+  title="舊版筆記"><i class="far fa-hand-point-right fa-fw"></i><span>舊版筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/STL/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h3 id="重製版"><a href="#重製版" class="headerlink" title="重製版"></a>重製版</h3><ol>
+<li><code>vector</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/19/vector/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li><code>queue</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/queue/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li><code>stack</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/stack/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li><code>map</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/map2/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li><code>set</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/set/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li><code>list</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/list/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li>演算法 <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="窮舉法"><a href="#窮舉法" class="headerlink" title="窮舉法"></a>窮舉法</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/05/10/sort/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="模擬"><a href="#模擬" class="headerlink" title="模擬"></a>模擬</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/07/simulation/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="分而治之"><a href="#分而治之" class="headerlink" title="分而治之"></a>分而治之</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/07/dc/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="並查集"><a href="#並查集" class="headerlink" title="並查集"></a>並查集</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/04/dsu/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="hhttps://zrn-code.github.io/tags/%E4%B8%A6%E6%9F%A5%E9%9B%86/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="基礎圖論"><a href="#基礎圖論" class="headerlink" title="基礎圖論"></a>基礎圖論</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/16/graph/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/%E5%9C%96%E8%AB%96/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li>DFS <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li>BFS <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li>最短路徑 <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li>
+<li>最小生成樹 <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+<h2 id="基礎數論"><a href="#基礎數論" class="headerlink" title="基礎數論"></a>基礎數論</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/" 
+  title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/" 
+  title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a>
+
+
+
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">名稱</th>
+<th align="center">筆記</th>
+<th align="center">題目列表</th>
+<th align="center"></th>
+<th align="center">名稱</th>
+<th align="center">筆記</th>
+<th align="center">題目列表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">基礎語法</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/03/16/basic/">連結</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/">連結</a></td>
+<td align="center">6</td>
+<td align="center">分而治之</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/06/07/dc/">連結</a></td>
+<td align="center">連結</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">STL</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/03/20/STL/">連結</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/STL/">連結</a></td>
+<td align="center">7</td>
+<td align="center">並查集</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/06/04/dsu/">連結</a></td>
+<td align="center">連結</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">窮舉法</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/05/10/brute/">連結</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/%E7%AA%AE%E8%88%89%E6%B3%95/">連結</a></td>
+<td align="center">8</td>
+<td align="center">圖論</td>
+<td align="center">連結</td>
+<td align="center">連結</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">排序</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/05/10/sort/">連結</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/%E6%8E%92%E5%BA%8F/">連結</a></td>
+<td align="center">9</td>
+<td align="center">DP</td>
+<td align="center">連結</td>
+<td align="center">連結</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">模擬</td>
+<td align="center"><a href="https://zrn-coding.github.io/2020/06/07/simulation/">連結</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zrn-code.github.io/tags/%E6%A8%A1%E6%93%AC/">連結</a></td>
+<td align="center">10</td>
+<td align="center">數學</td>
+<td align="center">連結</td>
+<td align="center">連結</td>
+</tr>
+</tbody></table>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zrn Ye</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="https://zrn-coding.github.io/2020/04/19/map/">https://zrn-coding.github.io/2020/04/19/map/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="https://zrn-coding.github.io" target="_blank">Zrn-Note</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/%E5%AD%B8%E7%BF%92%E6%AD%B7%E7%A8%8B/">學習歷程</a><a class="post-meta__tags" href="/tags/%E9%80%B2%E5%8C%96%E4%B9%8B%E8%B7%AF/">進化之路</a></div><div class="post_share"><div class="social-share" data-image="https://insights.dice.com/wp-content/uploads/2019/07/shutterstock_739534918.jpg" data-sites="facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/04/23/AI-6/"><img class="prev-cover" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CNN辨識物體</div></div></a></div><div class="next-post pull-right"><a href="/2020/04/16/AI-5/"><img class="next-cover" data-lazy-src="https://www.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/04/28-Brands-That-Use-AI-to-Enhance-Marketing.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CNN手寫辨識</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相關推薦</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/08/21/map2/" title="map的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">map的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/set/" title="set的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">set的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/list/" title="list的使用"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">list的使用</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/stack/" title="stack的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">stack的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/21/queue/" title="queue的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-21</div><div class="relatedPosts_title">queue的使用(新)</div></div></a></div><div class="relatedPosts_item"><a href="/2020/08/19/vector/" title="vector的使用(新)"><img class="relatedPosts_cover" data-lazy-src="https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1552685579264-XJODR3H54QVZSCCH2H5B/ke17ZwdGBToddI8pDm48kH12H_EdUeZY-Tvv_svcNx9Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI4AEFf-Jlj0yHs2ru3Hd-GQga4EnrFO4bxXsJo1lTp14KMshLAGzx4R3EDFOm1kBS/lifelong+learning"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-08-19</div><div class="relatedPosts_title">vector的使用(新)</div></div></a></div></div></div></article></main><footer id="footer" style="background-image: url(https://insights.dice.com/wp-content/uploads/2019/07/shutterstock_739534918.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By Zrn Ye</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字型"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="縮小字型"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜尋</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      false && mermaid.init()
+    })
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><link rel="stylesheet" href="/css/csstest.css"><script data-pjax src="/js/jstest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>
