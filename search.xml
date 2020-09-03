@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>WordPress創建網站</title>
+      <link href="/2020/09/03/wordpress/"/>
+      <url>/2020/09/03/wordpress/</url>
+      
+        <content type="html"><![CDATA[<h1 id="了解-WordPress"><a href="#了解-WordPress" class="headerlink" title="了解 WordPress"></a>了解 WordPress</h1><p>寫好了專案我們通常會需要一台 Server 上傳我們的網站。<br>很幸運的，經過近幾年來的發展讓網頁設計變得愈來愈容易上手。<br>今天我們會用<code>wordpress</code>來申請一個<strong>免費網域</strong>並且用<strong>超級簡單的方式</strong>創建一個屬於自己的網站</p><p>超級簡單的方式 = 可以完全0程式碼喔~~</p><h1 id="建立一個網域"><a href="#建立一個網域" class="headerlink" title="建立一個網域"></a>建立一個網域</h1><p>在輸入列上面輸入一個自己喜歡的<strong>網域關鍵字</strong>，並選擇下方的那個<strong>完全免費</strong>的網域</p><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="01.png"></p>              </div>            </details><h2 id="選擇方案"><a href="#選擇方案" class="headerlink" title="選擇方案"></a>選擇方案</h2><p>在這次嘗試中，選擇從免費方案著手</p><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="02.png"></p>              </div>            </details><h1 id="編輯網頁"><a href="#編輯網頁" class="headerlink" title="編輯網頁"></a>編輯網頁</h1><h2 id="網頁功能選單"><a href="#網頁功能選單" class="headerlink" title="網頁功能選單"></a>網頁功能選單</h2><p>在此選擇<strong>暫時略過</strong>即可</p><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="07.png"></p>              </div>            </details><h2 id="更新首頁"><a href="#更新首頁" class="headerlink" title="更新首頁"></a>更新首頁</h2><p>如果能看到這個畫面，代表你已經完成了喔~~</p><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="007.png"></p>              </div>            </details><h1 id="推出網站"><a href="#推出網站" class="headerlink" title="推出網站"></a>推出網站</h1><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="08.png"></p>              </div>            </details><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="09.png"></p>              </div>            </details><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="10.png"></p>              </div>            </details><h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>現在，你就可以預覽你的網站了喔~<br>也可以自由新增文章了喔~~</p><details green><summary> <p>範例引導圖</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="11.png"></p>              </div>            </details>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML中的文本</title>
       <link href="/2020/08/27/html3/"/>
       <url>/2020/08/27/html3/</url>
@@ -44,7 +57,7 @@
       <link href="/2020/08/26/map3/"/>
       <url>/2020/08/26/map3/</url>
       
-        <content type="html"><![CDATA[<h1 id="課程規劃"><a href="#課程規劃" class="headerlink" title="課程規劃"></a>課程規劃</h1><h2 id="大綱"><a href="#大綱" class="headerlink" title="大綱"></a>大綱</h2><h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><h3 id="課程類"><a href="#課程類" class="headerlink" title="課程類"></a>課程類</h3><div class='checkbox yellow'><input type="checkbox" />            <p>成功讓所有網頁組都有自己的網站</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會html基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會css基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都有好看的網站</p>            </div><h3 id="資研社類"><a href="#資研社類" class="headerlink" title="資研社類"></a>資研社類</h3><div class='checkbox blue'><input type="checkbox" />            <p>把嘉中資研社的社網架好(任何方式)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>選下一任網頁組負責人(教學相長)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>資研社有更好的突破</p>            </div><h3 id="期許類"><a href="#期許類" class="headerlink" title="期許類"></a>期許類</h3><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>增加自己寫筆記的能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>增加自己教學能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>全程都不要生氣(但允許開玩笑型)</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>教學時間全程不尷尬</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>社員們會自動自發、勇於嘗試</p>            </div><h1 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h1><div class="snote link blue"><p>我會盡快補齊</p></div><details green><summary> <p>github page</p> </summary>              <div class='content'>              <h3 id="網站架設github-page"><a href="#網站架設github-page" class="headerlink" title="網站架設github page"></a>網站架設<code>github page</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html-pre/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p><h3 id="html-amp-amp-css"><a href="#html-amp-amp-css" class="headerlink" title="html &amp;&amp; css"></a><code>html</code> &amp;&amp; <code>css</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html2"   title="HTML基本示例"><i class="far fa-hand-point-right fa-fw"></i><span>HTML基本示例</span></a> <a class="btn-beautify button--animated orange right" href="https://zrn-coding.github.io/2020/08/25/html1/"   title="基礎認識"><i class="far fa-hand-point-right fa-fw"></i><span>基礎認識</span></a> <a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/27/html3/"   title="html文本"><i class="far fa-hand-point-right fa-fw"></i><span>html文本</span></a></p><h3 id="javascript-amp-amp-jQuery"><a href="#javascript-amp-amp-jQuery" class="headerlink" title="javascript &amp;&amp; jQuery"></a><code>javascript</code> &amp;&amp; <code>jQuery</code></h3>              </div>            </details><details green><summary> <p>Wordpress</p> </summary>              <div class='content'>              <h3 id="網站架設wordpress"><a href="#網站架設wordpress" class="headerlink" title="網站架設wordpress"></a>網站架設<code>wordpress</code></h3><h3 id="樣式選擇"><a href="#樣式選擇" class="headerlink" title="樣式選擇"></a>樣式選擇</h3>              </div>            </details><details green><summary> <p>Hexo網站</p> </summary>              <div class='content'>              <h3 id="網站架設Hexo網站"><a href="#網站架設Hexo網站" class="headerlink" title="網站架設Hexo網站"></a>網站架設<code>Hexo</code>網站</h3><h3 id="推薦themes"><a href="#推薦themes" class="headerlink" title="推薦themes"></a>推薦<code>themes</code></h3><h3 id="推薦add-ons"><a href="#推薦add-ons" class="headerlink" title="推薦add-ons"></a>推薦<code>add-ons</code></h3>              </div>            </details>]]></content>
+        <content type="html"><![CDATA[<h1 id="課程規劃"><a href="#課程規劃" class="headerlink" title="課程規劃"></a>課程規劃</h1><h2 id="大綱"><a href="#大綱" class="headerlink" title="大綱"></a>大綱</h2><h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><h3 id="課程類"><a href="#課程類" class="headerlink" title="課程類"></a>課程類</h3><div class='checkbox yellow'><input type="checkbox" />            <p>成功讓所有網頁組都有自己的網站</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會html基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會css基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都有好看的網站</p>            </div><h3 id="資研社類"><a href="#資研社類" class="headerlink" title="資研社類"></a>資研社類</h3><div class='checkbox blue'><input type="checkbox" />            <p>把嘉中資研社的社網架好(任何方式)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>選下一任網頁組負責人(教學相長)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>資研社有更好的突破</p>            </div><h3 id="期許類"><a href="#期許類" class="headerlink" title="期許類"></a>期許類</h3><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>增加自己寫筆記的能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>增加自己教學能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>全程都不要生氣(但允許開玩笑型)</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>教學時間全程不尷尬</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>社員們會自動自發、勇於嘗試</p>            </div><h1 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h1><div class="snote link blue"><p>我會盡快補齊</p></div><details green><summary> <p>Wordpress</p> </summary>              <div class='content'>              <h3 id="網站架設wordpress"><a href="#網站架設wordpress" class="headerlink" title="網站架設wordpress"></a>網站架設<code>wordpress</code></h3>              </div>            </details><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/09/03/wordpress/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a><details green><summary> <p>github page</p> </summary>              <div class='content'>              <h3 id="網站架設github-page"><a href="#網站架設github-page" class="headerlink" title="網站架設github page"></a>網站架設<code>github page</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html-pre/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p><h3 id="html-amp-amp-css"><a href="#html-amp-amp-css" class="headerlink" title="html &amp;&amp; css"></a><code>html</code> &amp;&amp; <code>css</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html2"   title="HTML基本示例"><i class="far fa-hand-point-right fa-fw"></i><span>HTML基本示例</span></a> <a class="btn-beautify button--animated orange right" href="https://zrn-coding.github.io/2020/08/25/html1/"   title="基礎認識"><i class="far fa-hand-point-right fa-fw"></i><span>基礎認識</span></a> <a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/27/html3/"   title="html文本"><i class="far fa-hand-point-right fa-fw"></i><span>html文本</span></a></p><h3 id="javascript-amp-amp-jQuery"><a href="#javascript-amp-amp-jQuery" class="headerlink" title="javascript &amp;&amp; jQuery"></a><code>javascript</code> &amp;&amp; <code>jQuery</code></h3>              </div>            </details><details blue><summary> <p>Hexo網站</p> </summary>              <div class='content'>              <h3 id="網站架設Hexo網站"><a href="#網站架設Hexo網站" class="headerlink" title="網站架設Hexo網站"></a>網站架設<code>Hexo</code>網站</h3><h3 id="推薦themes"><a href="#推薦themes" class="headerlink" title="推薦themes"></a>推薦<code>themes</code></h3><h3 id="推薦add-ons"><a href="#推薦add-ons" class="headerlink" title="推薦add-ons"></a>推薦<code>add-ons</code></h3>              </div>            </details>]]></content>
       
       
       <categories>
@@ -159,11 +172,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
         </tags>
       
@@ -219,9 +232,9 @@
       
         <tags>
             
-            <tag> 筆記 </tag>
-            
             <tag> 基礎圖論 </tag>
+            
+            <tag> 筆記 </tag>
             
             <tag> 演算法 </tag>
             
@@ -250,9 +263,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 演算法 </tag>
+            
+            <tag> C++ </tag>
             
             <tag> STL </tag>
             
@@ -281,11 +294,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -316,11 +329,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -351,11 +364,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -386,11 +399,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -442,9 +455,9 @@
       
         <tags>
             
-            <tag> 筆記 </tag>
-            
             <tag> 基礎圖論 </tag>
+            
+            <tag> 筆記 </tag>
             
             <tag> 演算法 </tag>
             
@@ -473,11 +486,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -543,9 +556,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 筆記 </tag>
+            
+            <tag> C++ </tag>
             
             <tag> 超基礎之道 </tag>
             
@@ -576,11 +589,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
         </tags>
       
@@ -667,11 +680,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
         </tags>
       
@@ -698,11 +711,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 思維類 </tag>
             
@@ -731,11 +744,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -830,11 +843,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 思維類 </tag>
             
@@ -908,9 +921,9 @@
             
             <tag> python </tag>
             
-            <tag> CNN </tag>
-            
             <tag> keras </tag>
+            
+            <tag> CNN </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -978,11 +991,11 @@
             
             <tag> python </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
             <tag> keras </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
         </tags>
       
@@ -1017,9 +1030,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> 手寫辨識 </tag>
+            
+            <tag> keras </tag>
             
         </tags>
       
@@ -1108,11 +1121,11 @@
       
         <tags>
             
+            <tag> 筆記 </tag>
+            
             <tag> C++ </tag>
             
             <tag> 基礎之路 </tag>
-            
-            <tag> 筆記 </tag>
             
             <tag> 資料結構 </tag>
             
@@ -1176,9 +1189,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> 筆記 </tag>
+            
+            <tag> C++ </tag>
             
             <tag> 超基礎之道 </tag>
             
