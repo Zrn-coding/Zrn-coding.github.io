@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>javascript基本語法</title>
+      <link href="/2020/09/06/js01/"/>
+      <url>/2020/09/06/js01/</url>
+      
+        <content type="html"><![CDATA[<h1 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h1><ol><li><p>調用為宣告的變數會報錯</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(message);</span><br><span class="line"><span class="comment">// 提示錯誤：message is not defined</span></span><br></pre></td></tr></table></figure></li><li><p>只宣告，未定義（不賦值）</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message;</span><br><span class="line"><span class="built_in">console</span>.log(message); </span><br><span class="line"><span class="comment">//提示錯誤：undefined</span></span><br></pre></td></tr></table></figure></li><li><p>宣告變數可以不使用關鍵字 var，這只在非嚴格模式下適用；嚴格模式下會提示錯誤；<br> 非嚴格模式下:</p> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);</span><br><span class="line"><span class="comment">//輸出100</span></span><br></pre></td></tr></table></figure><p> 嚴格模式下:</p> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line">message = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);</span><br><span class="line"><span class="comment">//提示錯誤：message is not defined</span></span><br></pre></td></tr></table></figure></li></ol><h1 id="常數"><a href="#常數" class="headerlink" title="常數"></a>常數</h1><p>宣告常數時必須初始化。且定義後不可修改。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> message = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message);</span><br></pre></td></tr></table></figure><h1 id="原始數據類型"><a href="#原始數據類型" class="headerlink" title="原始數據類型"></a>原始數據類型</h1><p><code>JavaScript</code> 只有五種基本數據類型（<code>boolean</code> <code>null</code> <code>undefined</code> <code>number</code> <code>string</code>）和一種複雜數據類型 <code>Object</code>。</p><p>關於各種數據類型對布林類型的轉換關系。</p><table><thead><tr><th align="center">數據類型</th><th align="center">轉換為 <code>true</code></th><th align="center">轉換為 <code>false</code></th></tr></thead><tbody><tr><td align="center"><code>boolean</code> 類型</td><td align="center"><code>true</code></td><td align="center"><code>false</code></td></tr><tr><td align="center"><code>string</code> 類型</td><td align="center">任何非空字符串</td><td align="center">“”(空字符串)</td></tr><tr><td align="center"><code>number</code> 類型</td><td align="center">任何非零數字值（包括無窮大）</td><td align="center"><code>0</code>、<code>0.0</code> 和 <code>NaN</code></td></tr><tr><td align="center"><code>Object</code> 類型</td><td align="center">任何對象</td><td align="center"><code>null</code></td></tr><tr><td align="center"><code>undefined</code></td><td align="center"></td><td align="center"><code>underfined</code></td></tr></tbody></table><div class="note info">            <p>關於 <code>NaN</code>：<br><code>NaN</code> 表示不是一個數字 但是屬於 <code>number</code> 類型<br>與任何值不相等包括自身</p>          </div><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>在 <code>JavaScript</code> 中字符串不可以改變長度。那麼當修改字符串時實際上並不是在原字符串上進行修改，而是在創建一個一個變數，賦值為修改的內容。然後銷毀原字符串。</p><h1 id="包裝類型"><a href="#包裝類型" class="headerlink" title="包裝類型"></a>包裝類型</h1><p>在 <code>JavaScript</code> 語言中，原始類型與包裝類型創建的數據在使用上沒有任何差異</p><p>定義變數的兩種方式</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接/字面量 量方式定義</span></span><br><span class="line"><span class="keyword">var</span> bool = <span class="literal">true</span>;</span><br><span class="line"><span class="comment">//構造函數方式</span></span><br><span class="line"><span class="keyword">var</span> Bool = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure><p>創建對象的語法格式 new 構造函數(); 例如 <code>var Bool = new Boolean(true);</code> 表示創建一個值為 <code>true</code> 的變數 Bool</p><p>三種包裝類型分別是布林類型、數字類型、字符串類類型</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Bool = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">var</span> Num = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">var</span> Str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;this is message&quot;</span>);</span><br></pre></td></tr></table></figure><p>判斷包裝類型不能使用 <code>typeof</code> 而是使用 <code>instanceof</code> 。語法結構變數名/對象名 <code>instanceof</code> 構造函數/數據類型</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Str <span class="keyword">instanceof</span> <span class="built_in">String</span>);</span><br></pre></td></tr></table></figure><h1 id="特殊類型"><a href="#特殊類型" class="headerlink" title="特殊類型"></a>特殊類型</h1><h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>得到 <code>undefined</code> 這個值的情況</p><ul><li><p>宣告變數但未初始化值時。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg;</span><br><span class="line"><span class="built_in">console</span>.log(msg);</span><br></pre></td></tr></table></figure></li><li><p>宣告並初始化值為 <code>undefined</code> 時。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg1 = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(msg1);</span><br></pre></td></tr></table></figure></li><li><p>函數中的 <code>return</code> 語句的默認返回值。</p></li><li><p>函數中的 <code>return</code> 語句的返回值的設置為 <code>undefined</code></p></li><li><p>訪問某一對象中不存在的屬性時。</p></li></ul><h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><p><code>null</code> 是 5 個基本類型的一個，但是得到的類型是 <code>object</code>。這是 <code>JavaScript</code> 語言的曆史遺留問題 / 當初設計的紕漏。所以當我們判斷 <code>null</code> 類型時可以使用特殊方法 <code>console.log(Object.prototype.toString.call(null));</code></p><h2 id="undefined-與-null-的關係"><a href="#undefined-與-null-的關係" class="headerlink" title="undefined 與 null 的關係"></a>undefined 與 null 的關係</h2><p><code>undefined</code> <strong>派生</strong>於 <code>null</code>。他們兩個值相等但類型不等。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> == <span class="literal">null</span>); <span class="comment">// 結果true 說明值相等</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> === <span class="literal">null</span>); <span class="comment">// 結果false 說明類型不等</span></span><br></pre></td></tr></table></figure><h1 id="類型轉換"><a href="#類型轉換" class="headerlink" title="類型轉換"></a>類型轉換</h1><table><thead><tr><th align="center">關鍵點</th><th align="center">隱式類型轉換</th><th align="center">顯式類型轉換</th></tr></thead><tbody><tr><td align="center"><code>JavaScript</code>官方規範</td><td align="center">官方未提及</td><td align="center">明確表明</td></tr><tr><td align="center">執行效率 / 性能</td><td align="center">整體較優</td><td align="center">整體較弱</td></tr><tr><td align="center">難易程度</td><td align="center">有些難度</td><td align="center">容易</td></tr></tbody></table><h2 id="隱性類型轉換"><a href="#隱性類型轉換" class="headerlink" title="隱性類型轉換"></a>隱性類型轉換</h2><table><thead><tr><th align="center">欲轉換為</th><th align="center">轉換符號</th><th align="center">說明</th><th align="center">範例</th></tr></thead><tbody><tr><td align="center">布林</td><td align="center"><code>!!</code></td><td align="center">將數據轉換為布林類型，在數據前加<code>!!</code>即可</td><td align="center"><code>!!&quot;this is message&quot; !!11</code></td></tr><tr><td align="center">數字</td><td align="center"><code>+</code></td><td align="center">將數據轉換為數字類型，在數據前加<code>+</code>即可</td><td align="center"><code>+&quot;this is message&quot; +true</code></td></tr><tr><td align="center">字符串</td><td align="center"><code>&quot;&quot;+</code></td><td align="center">將數據轉換為字符串類型，與空字符串相加即可 (位置無關)</td><td align="center"><code>&quot;&quot; + 100 &quot;&quot; + true</code></td></tr></tbody></table><ul><li>如果存在字符串的話，按照字符串的拼接操作</li><li>沒有字符串，而存在數字值的話，按照算數運算操作</li></ul><h2 id="顯式類型轉換"><a href="#顯式類型轉換" class="headerlink" title="顯式類型轉換"></a>顯式類型轉換</h2><p>顯示類型轉換則是利用類型的構造方法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 轉化為 boolean 類型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Boolean</span>(<span class="string">&quot;this is message&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Boolean</span>(<span class="number">100</span>));</span><br><span class="line"><span class="comment">// 轉化為number類型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Number</span>(<span class="string">&quot;100&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Number</span>(<span class="literal">true</span>));</span><br><span class="line"><span class="comment">// 轉化為 string 類型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">String</span>(<span class="number">100</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">String</span>(<span class="literal">true</span>));</span><br></pre></td></tr></table></figure><p>關於轉換為數字時 <code>JavaScript</code> 提供了提供了兩個函數用戶轉換為 <code>number</code> 類型的整數和浮點數。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(<span class="number">11.11</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(<span class="number">11.11</span>));</span><br></pre></td></tr></table></figure><p>但需要注意的是：轉換為整型即 <code>parseInt</code> 函數，如果包含小數則將小數部分舍掉，並不會四捨五入計算。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;100轉化為&quot;</span>, <span class="built_in">parseInt</span>(<span class="string">&quot;100&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;100.55轉化為&quot;</span>, <span class="built_in">parseInt</span>(<span class="string">&quot;100.55&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;100轉化為&quot;</span>, <span class="built_in">parseFloat</span>(<span class="string">&quot;100&quot;</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;100.55轉化為&quot;</span>, <span class="built_in">parseFloat</span>(<span class="string">&quot;100.55&quot;</span>));</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">輸出結果為：</span></span><br><span class="line"><span class="comment">100轉化為 100</span></span><br><span class="line"><span class="comment">100.55轉化為 100</span></span><br><span class="line"><span class="comment">100轉化為 100</span></span><br><span class="line"><span class="comment">100.55轉化為 100.55</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><p>關於轉換為 <code>string</code> 類型 <code>JavaScript</code> 還提供一個 <code>toString</code> 方法。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> bool = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> num.toString());</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> bool.toString());</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>WordPress創建網站</title>
       <link href="/2020/09/03/wordpress/"/>
       <url>/2020/09/03/wordpress/</url>
@@ -647,13 +660,13 @@
       
         <tags>
             
+            <tag> 日記 </tag>
+            
             <tag> 考試 </tag>
             
             <tag> 出題者 </tag>
             
             <tag> 電腦社 </tag>
-            
-            <tag> 日記 </tag>
             
         </tags>
       
@@ -921,9 +934,9 @@
             
             <tag> python </tag>
             
-            <tag> CNN </tag>
-            
             <tag> keras </tag>
+            
+            <tag> CNN </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -991,11 +1004,11 @@
             
             <tag> python </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
             <tag> keras </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
         </tags>
       
@@ -1030,9 +1043,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> 手寫辨識 </tag>
+            
+            <tag> keras </tag>
             
         </tags>
       
@@ -1160,9 +1173,9 @@
             
             <tag> 深度學習 </tag>
             
-            <tag> 淺談AI </tag>
-            
             <tag> 機械學習 </tag>
+            
+            <tag> 淺談AI </tag>
             
         </tags>
       
