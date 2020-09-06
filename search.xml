@@ -42,9 +42,9 @@
             
             <tag> HTML </tag>
             
-            <tag> 基本 </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> 基本 </tag>
             
         </tags>
       
@@ -57,7 +57,7 @@
       <link href="/2020/08/26/map3/"/>
       <url>/2020/08/26/map3/</url>
       
-        <content type="html"><![CDATA[<h1 id="課程規劃"><a href="#課程規劃" class="headerlink" title="課程規劃"></a>課程規劃</h1><h2 id="大綱"><a href="#大綱" class="headerlink" title="大綱"></a>大綱</h2><h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><h3 id="課程類"><a href="#課程類" class="headerlink" title="課程類"></a>課程類</h3><div class='checkbox yellow'><input type="checkbox" />            <p>成功讓所有網頁組都有自己的網站</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會html基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會css基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都有好看的網站</p>            </div><h3 id="資研社類"><a href="#資研社類" class="headerlink" title="資研社類"></a>資研社類</h3><div class='checkbox blue'><input type="checkbox" />            <p>把嘉中資研社的社網架好(任何方式)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>選下一任網頁組負責人(教學相長)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>資研社有更好的突破</p>            </div><h3 id="期許類"><a href="#期許類" class="headerlink" title="期許類"></a>期許類</h3><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>增加自己寫筆記的能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>增加自己教學能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>全程都不要生氣(但允許開玩笑型)</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>教學時間全程不尷尬</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>社員們會自動自發、勇於嘗試</p>            </div><h1 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h1><div class="snote link blue"><p>我會盡快補齊</p></div><details green><summary> <p>Wordpress</p> </summary>              <div class='content'>              <h3 id="網站架設wordpress"><a href="#網站架設wordpress" class="headerlink" title="網站架設wordpress"></a>網站架設<code>wordpress</code></h3>              </div>            </details><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/09/03/wordpress/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a><details green><summary> <p>github page</p> </summary>              <div class='content'>              <h3 id="網站架設github-page"><a href="#網站架設github-page" class="headerlink" title="網站架設github page"></a>網站架設<code>github page</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html-pre/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p><h3 id="html-amp-amp-css"><a href="#html-amp-amp-css" class="headerlink" title="html &amp;&amp; css"></a><code>html</code> &amp;&amp; <code>css</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html2"   title="HTML基本示例"><i class="far fa-hand-point-right fa-fw"></i><span>HTML基本示例</span></a> <a class="btn-beautify button--animated orange right" href="https://zrn-coding.github.io/2020/08/25/html1/"   title="基礎認識"><i class="far fa-hand-point-right fa-fw"></i><span>基礎認識</span></a> <a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/27/html3/"   title="html文本"><i class="far fa-hand-point-right fa-fw"></i><span>html文本</span></a></p><h3 id="javascript-amp-amp-jQuery"><a href="#javascript-amp-amp-jQuery" class="headerlink" title="javascript &amp;&amp; jQuery"></a><code>javascript</code> &amp;&amp; <code>jQuery</code></h3>              </div>            </details><details blue><summary> <p>Hexo網站</p> </summary>              <div class='content'>              <h3 id="網站架設Hexo網站"><a href="#網站架設Hexo網站" class="headerlink" title="網站架設Hexo網站"></a>網站架設<code>Hexo</code>網站</h3><h3 id="推薦themes"><a href="#推薦themes" class="headerlink" title="推薦themes"></a>推薦<code>themes</code></h3><h3 id="推薦add-ons"><a href="#推薦add-ons" class="headerlink" title="推薦add-ons"></a>推薦<code>add-ons</code></h3>              </div>            </details>]]></content>
+        <content type="html"><![CDATA[<h1 id="課程規劃"><a href="#課程規劃" class="headerlink" title="課程規劃"></a>課程規劃</h1><h2 id="大綱"><a href="#大綱" class="headerlink" title="大綱"></a>大綱</h2><h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><h3 id="課程類"><a href="#課程類" class="headerlink" title="課程類"></a>課程類</h3><div class='checkbox yellow'><input type="checkbox" />            <p>成功讓所有網頁組都有自己的網站</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會html基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會css基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都有好看的網站</p>            </div><h3 id="資研社類"><a href="#資研社類" class="headerlink" title="資研社類"></a>資研社類</h3><div class='checkbox blue'><input type="checkbox" />            <p>把嘉中資研社的社網架好(任何方式)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>選下一任網頁組負責人(教學相長)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>資研社有更好的突破</p>            </div><h3 id="期許類"><a href="#期許類" class="headerlink" title="期許類"></a>期許類</h3><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>增加自己寫筆記的能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>增加自己教學能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>全程都不要生氣(但允許開玩笑型)</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>教學時間全程不尷尬</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>社員們會自動自發、勇於嘗試</p>            </div><h1 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h1><div class="snote link blue"><p>我會盡快補齊</p></div><details green><summary> <p>Wordpress</p> </summary>              <div class='content'>              <h3 id="網站架設wordpress"><a href="#網站架設wordpress" class="headerlink" title="網站架設wordpress"></a>網站架設<code>wordpress</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/09/03/wordpress/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p>              </div>            </details><details green><summary> <p>github page</p> </summary>              <div class='content'>              <h3 id="網站架設github-page"><a href="#網站架設github-page" class="headerlink" title="網站架設github page"></a>網站架設<code>github page</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html-pre/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p><h3 id="html-amp-amp-css"><a href="#html-amp-amp-css" class="headerlink" title="html &amp;&amp; css"></a><code>html</code> &amp;&amp; <code>css</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html2"   title="HTML基本示例"><i class="far fa-hand-point-right fa-fw"></i><span>HTML基本示例</span></a> <a class="btn-beautify button--animated orange right" href="https://zrn-coding.github.io/2020/08/25/html1/"   title="基礎認識"><i class="far fa-hand-point-right fa-fw"></i><span>基礎認識</span></a> <a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/27/html3/"   title="html文本"><i class="far fa-hand-point-right fa-fw"></i><span>html文本</span></a></p><h3 id="javascript-amp-amp-jQuery"><a href="#javascript-amp-amp-jQuery" class="headerlink" title="javascript &amp;&amp; jQuery"></a><code>javascript</code> &amp;&amp; <code>jQuery</code></h3>              </div>            </details><details blue><summary> <p>Hexo網站</p> </summary>              <div class='content'>              <h3 id="網站架設Hexo網站"><a href="#網站架設Hexo網站" class="headerlink" title="網站架設Hexo網站"></a>網站架設<code>Hexo</code>網站</h3><h3 id="推薦themes"><a href="#推薦themes" class="headerlink" title="推薦themes"></a>推薦<code>themes</code></h3><h3 id="推薦add-ons"><a href="#推薦add-ons" class="headerlink" title="推薦add-ons"></a>推薦<code>add-ons</code></h3>              </div>            </details>]]></content>
       
       
       <categories>
@@ -73,9 +73,9 @@
             
             <tag> HTML </tag>
             
-            <tag> 前端 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> 資研社計畫 </tag>
             
@@ -106,13 +106,13 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
-            <tag> 前端 </tag>
-            
             <tag> 電腦社計畫 </tag>
             
+            <tag> HTML </tag>
+            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -139,13 +139,13 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
-            <tag> 前端 </tag>
-            
             <tag> 電腦社計畫 </tag>
             
+            <tag> HTML </tag>
+            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -647,13 +647,13 @@
       
         <tags>
             
-            <tag> 日記 </tag>
-            
             <tag> 考試 </tag>
             
             <tag> 出題者 </tag>
             
             <tag> 電腦社 </tag>
+            
+            <tag> 日記 </tag>
             
         </tags>
       
@@ -921,9 +921,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> CNN </tag>
+            
+            <tag> keras </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -991,11 +991,11 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
             <tag> keras </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
@@ -1030,9 +1030,9 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
-            
             <tag> keras </tag>
+            
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
@@ -1160,9 +1160,9 @@
             
             <tag> 深度學習 </tag>
             
-            <tag> 機械學習 </tag>
-            
             <tag> 淺談AI </tag>
+            
+            <tag> 機械學習 </tag>
             
         </tags>
       
