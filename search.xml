@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>資研社社團資訊</title>
+      <link href="/2020/09/09/clubexam/"/>
+      <url>/2020/09/09/clubexam/</url>
+      
+        <content type="html"><![CDATA[<h1 id="社團資訊"><a href="#社團資訊" class="headerlink" title="社團資訊"></a>社團資訊</h1><div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="hello.jpg" alt="正面"><br><img src= "/img/loading.gif" data-lazy-src="0000.jpg" alt="背面"></p>            </div><h1 id="入社考題目"><a href="#入社考題目" class="headerlink" title="入社考題目"></a>入社考題目</h1><div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="0001.jpg" alt="題目"><br><img src= "/img/loading.gif" data-lazy-src="0002.jpg" alt="解答"></p>            </div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 資研社 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>javascript基本語法</title>
       <link href="/2020/09/06/js01/"/>
       <url>/2020/09/06/js01/</url>
@@ -660,13 +679,13 @@
       
         <tags>
             
+            <tag> 日記 </tag>
+            
             <tag> 考試 </tag>
             
             <tag> 出題者 </tag>
             
             <tag> 電腦社 </tag>
-            
-            <tag> 日記 </tag>
             
         </tags>
       
@@ -934,9 +953,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> CNN </tag>
+            
+            <tag> keras </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -1004,11 +1023,11 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
             <tag> keras </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
@@ -1043,9 +1062,9 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
-            
             <tag> keras </tag>
+            
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
