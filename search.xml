@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>資研社入社考考題詳解</title>
+      <title>資研社入社考考題詳解(編輯中)</title>
       <link href="/2020/09/10/ans-exam/"/>
       <url>/2020/09/10/ans-exam/</url>
       
-        <content type="html"><![CDATA[<h1 id="目前還是空的喔"><a href="#目前還是空的喔" class="headerlink" title="目前還是空的喔~~"></a>目前還是空的喔~~</h1><div class="note success">            <p>預計9/12(星期六)晚上9點更新喔~<br>敬請期待一下喔 (・∀・(・∀・(・∀・*)))</p>          </div>]]></content>
+        <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-lazy-src="https://cdn-origin.cool-style.com.tw/cool/2020/02/1577954658478.jpg"></p><h1 id="還沒有更新"><a href="#還沒有更新" class="headerlink" title="還沒有更新"></a>還沒有更新</h1><p>為追求好的品質，還有盡可能的詳細補充<br>預計明天晚上九點會上傳第一版詳解<br>敬請期待一下喔~~</p>]]></content>
       
       
       
@@ -974,9 +974,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> CNN </tag>
+            
+            <tag> keras </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -1044,11 +1044,11 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
             <tag> keras </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
@@ -1083,9 +1083,9 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
-            
             <tag> keras </tag>
+            
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
