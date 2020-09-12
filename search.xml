@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>資研社入社考考題詳解(編輯中)</title>
+      <title>資研社入社考考題詳解(第一版)</title>
       <link href="/2020/09/10/ans-exam/"/>
       <url>/2020/09/10/ans-exam/</url>
       
-        <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-lazy-src="https://cdn-origin.cool-style.com.tw/cool/2020/02/1577954658478.jpg"></p><h1 id="還沒有更新"><a href="#還沒有更新" class="headerlink" title="還沒有更新"></a>還沒有更新</h1><p>為追求好的品質，還有盡可能的詳細補充<br>預計明天晚上九點會上傳第一版詳解<br>敬請期待一下喔~~</p>]]></content>
+        <content type="html"><![CDATA[<div class='tip warning'><p>這只是先行版，兩天後還會再增加演算應用、相關試題及程式碼，敬請期待!!<p></div><h1 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h1><details cyan><summary> <p>題目敘述</p> </summary>              <div class='content'>              <div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="1.png" alt="第一題喔"></p>            </div><div class="snote link blue"><p>題目出處: <b>國際運算思維能力測驗</b>(俗稱Bebras或小海狸)2014年題庫<b>第九題邏輯電路</b></p></div>              </div>            </details><details cyan><summary> <p>題解部分</p> </summary>              <div class='content'>              <p>他就是要考你條件的判斷，只要把圖畫下來就好了<br>不知道要帶紙筆的我們，很抱歉</p><p><img src= "/img/loading.gif" data-lazy-src="04.png"></p>              </div>            </details><h1 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h1><details cyan><summary> <p>題目敘述</p> </summary>              <div class='content'>              <div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="2.png" alt="第二題喔"></p>            </div><div class="snote link blue">題目出處: <b>國際運算思維能力測驗</b>(俗稱Bebras或小海狸)2014年題庫<b>第14題</b></div>              </div>            </details><details cyan><summary> <p>題解部分</p> </summary>              <div class='content'>              <p>此題完全就是二進制的考題。</p><h2 id="什麼是二進制？"><a href="#什麼是二進制？" class="headerlink" title="什麼是二進制？"></a>什麼是二進制？</h2><p>日常我們在算數學時，時常是使用十進制的方式運算，十進制就是當我們累加到<strong>10</strong>的時候就會<strong>進位</strong>，後面的數都會歸0。（思考一下，99+1=100是怎麼運作的）</p><p>二進制，也有相同的效果，當我們數到<strong>2</strong>的時候，就會<strong>進位</strong>，後面數字也都會歸0，跟題目敘述一模一樣。</p><h2 id="知道是二進制又能幹嘛？"><a href="#知道是二進制又能幹嘛？" class="headerlink" title="知道是二進制又能幹嘛？"></a>知道是二進制又能幹嘛？</h2><p>像我們在運算十進位時，<br>001 代表 10⁰<br>010 代表 10¹<br>100 代表 10²</p><p>在二進制的思維裡，只需要將底數10全改成2，就可以輕鬆轉換為十進制:<br>001 代表 2⁰ = 1<br>010 代表 2¹ = 2<br>100 代表 2² = 4</p><p>在運算時，我們可以將一個數字分別對不同位數做拆解相加，像是：<br>0110 = 100 + 10 = 10² +10¹<br>1101 = 1000 + 100 + 1 = 10³ +10² + 10⁰</p><p>在二進的方法中，亦可拆分，<br>0110 = 100 + 10 = 2² +2¹ = 5<br>1101 = 1000 + 100 + 1 = 2³ +2² + 2⁰ = 13</p><h2 id="回到題目"><a href="#回到題目" class="headerlink" title="回到題目"></a>回到題目</h2><p>題目中的 00101，即可轉換為 2² + 2⁰ =5<br>題目中的 11110 ，即可轉換為 2⁴+2³+2²+2¹=30<br>兩者之間的差值即為所解，所以就等於25</p>              </div>            </details><h1 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h1><details cyan><summary> <p>題目敘述</p> </summary>              <div class='content'>              <div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="3.png" alt="第三題喔"></p>            </div><div class="snote link blue">題目出處: <a href="https://codeforces.com/contest/1350/problem/A">Codeforces Round #641 (Div. 2)A. Orac and Factors</a></div>              </div>            </details><details cyan><summary> <p>題解部分</p> </summary>              <div class='content'>              <p>此題就是簡單的greedy題目。</p><h2 id="第一個子題"><a href="#第一個子題" class="headerlink" title="第一個子題"></a>第一個子題</h2><p>純粹只是考驗你是否了解題目的敘述<br>n = 5 + 5 = 10</p><h2 id="第二個子題"><a href="#第二個子題" class="headerlink" title="第二個子題"></a>第二個子題</h2><p>經過多次+2運算，不難發現只要數字被累加到偶數以後的次數一定都是+2<br>n = 6 +2 +2 +2 +2 +2 = 14</p><h2 id="第三個子題"><a href="#第三個子題" class="headerlink" title="第三個子題"></a>第三個子題</h2><p>就是利用在上一個子題的規律，雖然原本的數不是偶數，但經過一次運算使其成為82之後，剩下的99次都一定會是+2。所以，答案即為41+41+99×2=280</p>              </div>            </details><h1 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h1><details cyan><summary> <p>題目敘述</p> </summary>              <div class='content'>              <p><img src= "/img/loading.gif" data-lazy-src="4.png" alt="第四題喔"><br><img src= "/img/loading.gif" data-lazy-src="5.png" alt="第四題喔"></p><div class="snote link blue">題目出處: 毛豆子的腦袋瓜(原創)</div>              </div>            </details><details cyan><summary> <p>題解部分</p> </summary>              <div class='content'>              <p>就只是個長篇文章，實際上一點也不難。</p><p>簡單的重新詮釋題目：<br>有n組不同的群組，每個人都有自己的易怒值，只要不同群組的人碰在一起，就會有怒氣值，每張桌子的怒氣值=（該桌不同的群組數）×（該桌最大的易怒值），每張桌子可以坐無限多人。</p><p>現在問題是：至少準備多少張桌子即可將總怒氣值降到最低？</p><p>若要產生最小的怒氣值最小值，就是沒有產生怒氣值，所以，只要準備n張桌子，一組一桌就好啦!!<br>如果有先看選項應該就很好想了。</p>              </div>            </details><h1 id="第五題"><a href="#第五題" class="headerlink" title="第五題"></a>第五題</h1><details cyan><summary> <p>題目敘述</p> </summary>              <div class='content'>              <div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="6.png" alt="第五題喔"></p>            </div><div class="snote link blue">題目出處: <a href="https://codeforces.com/problemset/problem/1372/C">Codeforces Round #655 (Div. 2)C. Omkar and Baseball</a></div>              </div>            </details><details cyan><summary> <p>題解部分</p> </summary>              <div class='content'>              <p>就是一個思維(討論)題喔~~</p><p>因為題目是問k的最小值，所以我們只要從0開始討論狀況，直到找到符合題目的解即可。</p><ol><li>k = 0 ， 只能將已經排序好的數列排序好(就是沒排)</li><li>k = 1 ， 因為是錯排(指定區域都要換)，所以只能排好只有一段順序完全不對的數列<br> 例如: {2,3,4,1}或{1,3,2,4}等等</li><li>k = 2 ， 第一次的轉換就把數列全打亂，使數列只剩一段順序完全不對，第二次就必能排序好</li></ol><p>所以，答案就是2啦<del>簡單吧，是不是真的在100萬以下阿</del></p>              </div>            </details><h1 id="第六題"><a href="#第六題" class="headerlink" title="第六題"></a>第六題</h1><details cyan><summary> <p>題目敘述</p> </summary>              <div class='content'>              <div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="7.png" alt="第六題喔"></p>            </div><div class='tip info'>題目出處: <b>國際運算思維能力測驗</b>(俗稱Bebras或小海狸)2014年題庫<b>第二十九題加總區表</b></div>              </div>            </details><details cyan><summary> <p>題解部分</p> </summary>              <div class='content'>              <p>這題是個二維的前綴和，但也沒有那麼困難</p><p>經過細心觀察，再加上那超級佛系的提示二，不難發現加密過後的數字就是指<strong>從左下到右上角的海狸數量</strong>，所以，只要一格一格的從左下往右上推理，答案就能被畫出來囉<br><del>當然也可以用排容原理解喔</del></p><p><img src= "/img/loading.gif" data-lazy-src="hello.png"></p><p>答案就是三個喔</p>              </div>            </details>]]></content>
       
       
       
@@ -974,9 +974,9 @@
             
             <tag> python </tag>
             
-            <tag> CNN </tag>
-            
             <tag> keras </tag>
+            
+            <tag> CNN </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -1044,11 +1044,11 @@
             
             <tag> python </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
             <tag> keras </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
         </tags>
       
@@ -1083,9 +1083,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> 手寫辨識 </tag>
+            
+            <tag> keras </tag>
             
         </tags>
       
