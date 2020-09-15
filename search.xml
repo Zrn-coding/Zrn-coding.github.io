@@ -8,7 +8,7 @@
       <link href="/2020/09/15/sorry/"/>
       <url>/2020/09/15/sorry/</url>
       
-        <content type="html"><![CDATA[<h1 id="此網站不會再正常更新了"><a class="markdownIt-Anchor" href="#此網站不會再正常更新了"></a> 此網站不會再正常更新了</h1><p>因為維護上的問題，我最後還是決定提早將網站移走，免得變得太過麻煩</p><h1 id="主網站的改變"><a class="markdownIt-Anchor" href="#主網站的改變"></a> 主網站的改變</h1><p>之後的更新，還有一些貼文將會在我新的主網站上<br /><a href="https://zrn-code.github.io">https://zrn-code.github.io</a><br />請大家多多支持一下</p><h1 id="可惜"><a class="markdownIt-Anchor" href="#可惜"></a> 可惜</h1><p>這是我的第一個網站，我還記得剛創立這網站時，我對我的教學之路充滿了無限的希望，曾經熬了好幾個夜晚慢慢地改寫、學習還有更新，雖然內容不適非常的豐富，但我能就樂此不疲。在這個網站第一次突破100人瀏覽時，我記得我是開心的睡不著覺，連續在班上自喜了好久好久，那時候的我真的好快樂。<br />這個暑假，我甚至還花了整整14天，開始努力熬夜的編輯外觀，開始自學如何自寫外掛，就像個coder，讓我的風格開始大量的傳播，瀏覽人數也悄悄的增加到300、600、1000、1500，甚至到了現在的2000人，雖然數字不算是很多，但是我仍以為榮耀，以此成為了我更新努力的原動力。</p><h1 id="希望"><a class="markdownIt-Anchor" href="#希望"></a> 希望</h1><p>我的新網站可以繼承這網站的熱血，使我的教學之路，能不間斷的繼續下去</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="此網站不會再正常更新了"><a class="markdownIt-Anchor" href="#此網站不會再正常更新了"></a> 此網站不會再正常更新了</h1><p>因為維護上的問題，我最後還是決定提早將網站移走，免得變得太過麻煩</p><h1 id="主網站的改變"><a class="markdownIt-Anchor" href="#主網站的改變"></a> 主網站的改變</h1><p>之後的更新，還有一些貼文將會在我新的主網站上<br /><a href="https://zrn-code.github.io">https://zrn-code.github.io</a><br />請大家多多支持一下</p><h1 id="可惜"><a class="markdownIt-Anchor" href="#可惜"></a> 可惜</h1><p>這是我的第一個網站，我還記得剛創立這網站時，我對我的教學之路充滿了無限的希望，曾經熬了好幾個夜晚慢慢地改寫、學習還有更新，雖然內容不適非常的豐富，但我能就樂此不疲。在這個網站第一次突破100人瀏覽時，我記得我是開心的睡不著覺，連續在班上自喜了好久好久，那時候的我真的好快樂。<br />這個暑假，我甚至還花了整整14天，開始努力熬夜的編輯外觀，開始自學如何自寫外掛，就像個coder，讓我的風格開始大量的傳播，瀏覽人數也悄悄的增加到300、600、1000、1500，甚至到了現在的2000人，雖然數字不算是很多，但是我仍以為榮耀，以此成為了我更新努力的原動力。</p><h1 id="希望"><a class="markdownIt-Anchor" href="#希望"></a> 希望</h1><p>我的新網站可以繼承這網站的熱血，使我的教學之路，能不間斷的繼續下去<br />成功的秘密是對目的堅貞不移 - Zrn Ye(葉致宏)</p>]]></content>
       
       
       
@@ -939,9 +939,9 @@
             
             <tag> python </tag>
             
-            <tag> keras </tag>
-            
             <tag> CNN </tag>
+            
+            <tag> keras </tag>
             
             <tag> 物體辨識 </tag>
             
@@ -978,11 +978,11 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
+            <tag> CNN </tag>
             
             <tag> keras </tag>
             
-            <tag> CNN </tag>
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
@@ -1017,9 +1017,9 @@
             
             <tag> python </tag>
             
-            <tag> 手寫辨識 </tag>
-            
             <tag> keras </tag>
+            
+            <tag> 手寫辨識 </tag>
             
         </tags>
       
