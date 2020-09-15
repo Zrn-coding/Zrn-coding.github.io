@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>主要網站已經轉移了</title>
+      <link href="/2020/09/15/sorry/"/>
+      <url>/2020/09/15/sorry/</url>
+      
+        <content type="html"><![CDATA[<h1 id="此網站不會再正常更新了"><a class="markdownIt-Anchor" href="#此網站不會再正常更新了"></a> 此網站不會再正常更新了</h1><p>因為維護上的問題，我最後還是決定提早將網站移走，免得變得太過麻煩</p><h1 id="主網站的改變"><a class="markdownIt-Anchor" href="#主網站的改變"></a> 主網站的改變</h1><p>之後的更新，還有一些貼文將會在我新的主網站上<br /><a href="https://zrn-code.github.io">https://zrn-code.github.io</a><br />請大家多多支持一下</p><h1 id="可惜"><a class="markdownIt-Anchor" href="#可惜"></a> 可惜</h1><p>這是我的第一個網站，我還記得剛創立這網站時，我對我的教學之路充滿了無限的希望，曾經熬了好幾個夜晚慢慢地改寫、學習還有更新，雖然內容不適非常的豐富，但我能就樂此不疲。在這個網站第一次突破100人瀏覽時，我記得我是開心的睡不著覺，連續在班上自喜了好久好久，那時候的我真的好快樂。<br />這個暑假，我甚至還花了整整14天，開始努力熬夜的編輯外觀，開始自學如何自寫外掛，就像個coder，讓我的風格開始大量的傳播，瀏覽人數也悄悄的增加到300、600、1000、1500，甚至到了現在的2000人，雖然數字不算是很多，但是我仍以為榮耀，以此成為了我更新努力的原動力。</p><h1 id="希望"><a class="markdownIt-Anchor" href="#希望"></a> 希望</h1><p>我的新網站可以繼承這網站的熱血，使我的教學之路，能不間斷的繼續下去</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 日記 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>資研社入社考考題詳解(第一版)</title>
       <link href="/2020/09/10/ans-exam/"/>
       <url>/2020/09/10/ans-exam/</url>
@@ -17,25 +36,6 @@
             <tag> 資研社 </tag>
             
             <tag> 入社考 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>資研社入社考消息</title>
-      <link href="/2020/09/09/clubexam/"/>
-      <url>/2020/09/09/clubexam/</url>
-      
-        <content type="html"><![CDATA[<h1 id="社團傳單"><a class="markdownIt-Anchor" href="#社團傳單"></a> 社團傳單</h1><div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="hello.jpg" alt="正面" /><br /><img src= "/img/loading.gif" data-lazy-src="0000.jpg" alt="背面" /></p>            </div><h1 id="入社考範例題目"><a class="markdownIt-Anchor" href="#入社考範例題目"></a> 入社考範例題目</h1><div class="gallery ">              <p><img src= "/img/loading.gif" data-lazy-src="0001.jpg" alt="題目" /><br /><img src= "/img/loading.gif" data-lazy-src="0002.jpg" alt="解答" /></p>            </div>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 資研社 </tag>
             
         </tags>
       
@@ -98,41 +98,6 @@
             <tag> 前端 </tag>
             
             <tag> 基本 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>網頁組學習導覽</title>
-      <link href="/2020/08/26/map3/"/>
-      <url>/2020/08/26/map3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="課程規劃"><a class="markdownIt-Anchor" href="#課程規劃"></a> 課程規劃</h1><h2 id="大綱"><a class="markdownIt-Anchor" href="#大綱"></a> 大綱</h2><h2 id="目標"><a class="markdownIt-Anchor" href="#目標"></a> 目標</h2><h3 id="課程類"><a class="markdownIt-Anchor" href="#課程類"></a> 課程類</h3><div class='checkbox yellow'><input type="checkbox" />            <p>成功讓所有網頁組都有自己的網站</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會html基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都學會css基礎</p>            </div><div class='checkbox yellow'><input type="checkbox" />            <p>所有人都有好看的網站</p>            </div><h3 id="資研社類"><a class="markdownIt-Anchor" href="#資研社類"></a> 資研社類</h3><div class='checkbox blue'><input type="checkbox" />            <p>把嘉中資研社的社網架好(任何方式)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>選下一任網頁組負責人(教學相長)</p>            </div><div class='checkbox blue'><input type="checkbox" />            <p>資研社有更好的突破</p>            </div><h3 id="期許類"><a class="markdownIt-Anchor" href="#期許類"></a> 期許類</h3><div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>            <p>增加自己寫筆記的能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>增加自己教學能力</p>            </div><div class='checkbox cyan'><input type="checkbox" />            <p>全程都不要生氣(但允許開玩笑型)</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>教學時間全程不尷尬</p>            </div><div class='checkbox green'><input type="checkbox" />            <p>社員們會自動自發、勇於嘗試</p>            </div><h1 id="課程內容"><a class="markdownIt-Anchor" href="#課程內容"></a> 課程內容</h1><div class="snote link blue"><p>我會盡快補齊</p></div><details green><summary> <p>Wordpress</p> </summary>              <div class='content'>              <h3 id="網站架設wordpress"><a class="markdownIt-Anchor" href="#網站架設wordpress"></a> 網站架設<code>wordpress</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/09/03/wordpress/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p>              </div>            </details><details green><summary> <p>github page</p> </summary>              <div class='content'>              <h3 id="網站架設github-page"><a class="markdownIt-Anchor" href="#網站架設github-page"></a> 網站架設<code>github page</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html-pre/"   title="網站架設"><i class="far fa-hand-point-right fa-fw"></i><span>網站架設</span></a></p><h3 id="html-css"><a class="markdownIt-Anchor" href="#html-css"></a> <code>html</code> &amp;&amp; <code>css</code></h3><p><a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/26/html2"   title="HTML基本示例"><i class="far fa-hand-point-right fa-fw"></i><span>HTML基本示例</span></a> <a class="btn-beautify button--animated orange right" href="https://zrn-coding.github.io/2020/08/25/html1/"   title="基礎認識"><i class="far fa-hand-point-right fa-fw"></i><span>基礎認識</span></a> <a class="btn-beautify button--animated green right" href="https://zrn-coding.github.io/2020/08/27/html3/"   title="html文本"><i class="far fa-hand-point-right fa-fw"></i><span>html文本</span></a></p><h3 id="javascript-jquery"><a class="markdownIt-Anchor" href="#javascript-jquery"></a> <code>javascript</code> &amp;&amp; <code>jQuery</code></h3>              </div>            </details><details blue><summary> <p>Hexo網站</p> </summary>              <div class='content'>              <h3 id="網站架設hexo網站"><a class="markdownIt-Anchor" href="#網站架設hexo網站"></a> 網站架設<code>Hexo</code>網站</h3><h3 id="推薦themes"><a class="markdownIt-Anchor" href="#推薦themes"></a> 推薦<code>themes</code></h3><h3 id="推薦add-ons"><a class="markdownIt-Anchor" href="#推薦add-ons"></a> 推薦<code>add-ons</code></h3>              </div>            </details>]]></content>
-      
-      
-      <categories>
-          
-          <category> 資研社相關 </category>
-          
-          <category> 學習地圖 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> HTML </tag>
-            
-            <tag> CSS </tag>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 資研社計畫 </tag>
-            
-            <tag> Hexo </tag>
             
         </tags>
       
@@ -979,37 +944,6 @@
             <tag> CNN </tag>
             
             <tag> 物體辨識 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>C++學習地圖</title>
-      <link href="/2020/04/19/map/"/>
-      <url>/2020/04/19/map/</url>
-      
-        <content type="html"><![CDATA[<div class='tip warning'><p><strong>warning</strong> 連結幾乎都是錯的，我會盡快補上的(´。＿。｀)<p></div><h1 id="基礎語法"><a class="markdownIt-Anchor" href="#基礎語法"></a> 基礎語法</h1><h2 id="基礎輸入輸出"><a class="markdownIt-Anchor" href="#基礎輸入輸出"></a> 基礎輸入輸出</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green right" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="運算子與基本結構"><a class="markdownIt-Anchor" href="#運算子與基本結構"></a> 運算子與基本結構</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="條件選擇"><a class="markdownIt-Anchor" href="#條件選擇"></a> 條件選擇</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="迴圈"><a class="markdownIt-Anchor" href="#迴圈"></a> 迴圈</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="陣列"><a class="markdownIt-Anchor" href="#陣列"></a> 陣列</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="函式"><a class="markdownIt-Anchor" href="#函式"></a> 函式</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <span class="hide-inline"><button type="button" class="hide-button button--animated" style="background-color: #5cb85c;">Code  </button><span class="hide-content">我不常單獨用，（；´д｀）ゞ</span></span><h1 id="比較進階的基礎"><a class="markdownIt-Anchor" href="#比較進階的基礎"></a> 比較進階的基礎</h1><h2 id="字串-stringstream"><a class="markdownIt-Anchor" href="#字串-stringstream"></a> 字串、stringstream</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/07/12/string/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/tags/%E5%AD%97%E4%B8%B2/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="stl"><a class="markdownIt-Anchor" href="#stl"></a> STL</h2><a class="btn-beautify button--animated red" href="https://zrn-coding.github.io/2020/03/20/STL/"   title="舊版筆記"><i class="far fa-hand-point-right fa-fw"></i><span>舊版筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/tags/STL/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h3 id="重製版"><a class="markdownIt-Anchor" href="#重製版"></a> 重製版</h3><ol><li><code>vector</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/19/vector/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li><code>queue</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/queue/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li><code>stack</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/stack/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li><code>map</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/map2/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li><code>set</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/set/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li><code>list</code> <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/08/21/list/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li>演算法 <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li></ol><h2 id="窮舉法"><a class="markdownIt-Anchor" href="#窮舉法"></a> 窮舉法</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="排序"><a class="markdownIt-Anchor" href="#排序"></a> 排序</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/05/10/sort/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="模擬"><a class="markdownIt-Anchor" href="#模擬"></a> 模擬</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/07/simulation/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="分而治之"><a class="markdownIt-Anchor" href="#分而治之"></a> 分而治之</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/07/dc/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="並查集"><a class="markdownIt-Anchor" href="#並查集"></a> 並查集</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/04/dsu/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="hhttps://zrn-code.github.io/tags/%E4%B8%A6%E6%9F%A5%E9%9B%86/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="基礎圖論"><a class="markdownIt-Anchor" href="#基礎圖論"></a> 基礎圖論</h2><a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/06/16/graph/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/tags/%E5%9C%96%E8%AB%96/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><ol><li>DFS <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li>BFS <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li>最短路徑 <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li><li>最小生成樹 <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a></li></ol><h2 id="dp"><a class="markdownIt-Anchor" href="#dp"></a> DP</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><h2 id="基礎數論"><a class="markdownIt-Anchor" href="#基礎數論"></a> 基礎數論</h2>   <a class="btn-beautify button--animated blue" href="https://zrn-coding.github.io/2020/03/16/basic/"   title="筆記"><i class="far fa-hand-point-right fa-fw"></i><span>筆記</span></a> <a class="btn-beautify button--animated green" href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/"   title="Code"><i class="far fa-hand-point-right fa-fw"></i><span>Code</span></a><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">名稱</th><th style="text-align:center">筆記</th><th style="text-align:center">題目列表</th><th style="text-align:center"></th><th style="text-align:center">名稱</th><th style="text-align:center">筆記</th><th style="text-align:center">題目列表</th></tr></thead><tbody><tr><td style="text-align:center">1</td><td style="text-align:center">基礎語法</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/03/16/basic/">連結</a></td><td style="text-align:center"><a href="https://zrn-code.github.io/categories/%E5%AD%B8%E6%A0%A1%E9%A1%8C%E5%96%AE/%E5%9F%BA%E7%A4%8E/">連結</a></td><td style="text-align:center">6</td><td style="text-align:center">分而治之</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/06/07/dc/">連結</a></td><td style="text-align:center">連結</td></tr><tr><td style="text-align:center">2</td><td style="text-align:center">STL</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/03/20/STL/">連結</a></td><td style="text-align:center"><a href="https://zrn-code.github.io/tags/STL/">連結</a></td><td style="text-align:center">7</td><td style="text-align:center">並查集</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/06/04/dsu/">連結</a></td><td style="text-align:center">連結</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">窮舉法</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/05/10/brute/">連結</a></td><td style="text-align:center"><a href="https://zrn-code.github.io/tags/%E7%AA%AE%E8%88%89%E6%B3%95/">連結</a></td><td style="text-align:center">8</td><td style="text-align:center">圖論</td><td style="text-align:center">連結</td><td style="text-align:center">連結</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">排序</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/05/10/sort/">連結</a></td><td style="text-align:center"><a href="https://zrn-code.github.io/tags/%E6%8E%92%E5%BA%8F/">連結</a></td><td style="text-align:center">9</td><td style="text-align:center">DP</td><td style="text-align:center">連結</td><td style="text-align:center">連結</td></tr><tr><td style="text-align:center">5</td><td style="text-align:center">模擬</td><td style="text-align:center"><a href="https://zrn-coding.github.io/2020/06/07/simulation/">連結</a></td><td style="text-align:center"><a href="https://zrn-code.github.io/tags/%E6%A8%A1%E6%93%AC/">連結</a></td><td style="text-align:center">10</td><td style="text-align:center">數學</td><td style="text-align:center">連結</td><td style="text-align:center">連結</td></tr></tbody></table>]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-          <category> 學習地圖 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> C++ </tag>
-            
-            <tag> 學習歷程 </tag>
-            
-            <tag> 進化之路 </tag>
             
         </tags>
       
