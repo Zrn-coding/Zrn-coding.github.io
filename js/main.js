@@ -766,6 +766,13 @@ if (GLOBAL_CONFIG.islazyload) {
   )
 }
 
+
+const changing = function(){
+  if (GLOBAL_CONFIG.Snackbar !== undefined)
+    update('此網站已不再更新囉!!')
+}
+
+
 const unRefreshFn = function () {
   $(window).on('resize', function () {
     if (window.innerWidth < 768) adjustMenu(0)
@@ -801,6 +808,7 @@ const refreshFn = function () {
   clickFnOfTabs()
   toggleCardCategory()
   switchComments()
+  changing()
 }
 
 $(function () {

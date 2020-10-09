@@ -66,6 +66,29 @@ function scrollToDest (name, offset = 0) {
   })
 };
 
+
+function update(text,duration){
+  const sa = (typeof showAction !== 'undefined') ? showAction : true
+  const dur = (typeof duration !== 'undefined') ? duration : 1000000
+  const position = 'top-center'
+  const bg = '#909090'
+  Snackbar.show({
+    alertScreenReader: true,
+    actionTextColor: '#ffffff',
+    text: text,
+    backgroundColor: bg,
+    showAction: sa,
+    duration: dur,
+    pos: position,
+    actionText: '點我前往新網站',
+    onActionClick: function(){
+      window.open('https://zrn-code.github.io/')
+    }
+  })
+
+
+}
+
 function snackbarShow (text, showAction, duration) {
   const sa = (typeof showAction !== 'undefined') ? showAction : false
   const dur = (typeof duration !== 'undefined') ? duration : 2000
@@ -76,7 +99,10 @@ function snackbarShow (text, showAction, duration) {
     backgroundColor: bg,
     showAction: sa,
     duration: dur,
-    pos: position
+    pos: position,
+    onClose: function(){
+      update('此網站已不再更新囉!!')
+    }
   })
 }
 
